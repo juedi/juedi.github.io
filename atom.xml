@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Juedi's blog]]></title>
+  <subtitle><![CDATA[吾当绝地而行，纵万里而不知倦也]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://xwx517.com/"/>
+  <updated>2014-12-17T15:17:16.689Z</updated>
+  <id>http://xwx517.com/</id>
+  
+  <author>
+    <name><![CDATA[duliao]]></name>
+    <email><![CDATA[duliao116@163.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[博客之旅]]></title>
+    <link href="http://xwx517.com/2014/12/16/%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/"/>
+    <id>http://xwx517.com/2014/12/16/博客之旅/</id>
+    <published>2014-12-16T15:26:40.000Z</published>
+    <updated>2014-12-17T14:24:39.000Z</updated>
+    <content type="html"><![CDATA[<p>从今天起，也算是开始学会使用Github作为个人博客的平台了。忙活了半天，也用Hexo把基本的博客框架搭建了起来，貌似还是很好用的，不过我才只学会了一点点基本的应用，接下来就是要好好学习下这玩意怎么搞才方便，有能力的话还是自己搞一套皮肤才好玩，毕竟玩这个的就是追求个性。当然了，我不同与那群大牛的是，我以前基本没写过博客，虽然以前叨叨着写这写那的，可总是懒得动手，这次既然费劲把这个弄好了，那以后说什么也得多总结、多记录写心得体会啥的，不能让这番功夫白费了！</p>
+<p>姑且自勉之！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>从今天起，也算是开始学会使用Github作为个人博客的平台了。忙活了半天，也用Hexo把基本的博客框架搭建了起来，貌似还是很好用的，不过我才只学会了一点点基本的应用，接下来就是要好好学习下这玩意怎么搞才方便，有能力的话还是自己搞一套皮肤才好玩，毕竟玩这个的就是追求个性。当然]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://xwx517.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://xwx517.com/2014/12/11/hello-world/"/>
+    <id>http://xwx517.com/2014/12/11/hello-world/</id>
+    <published>2014-12-11T15:03:28.000Z</published>
+    <updated>2014-12-11T15:03:28.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2>
+<h3 id="Create_a_new_post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
