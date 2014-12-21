@@ -1,26 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Juedi's blog]]></title>
-  <subtitle><![CDATA[吾当绝地而行，纵万里而不知倦也]]></subtitle>
-  <link href="/atom.xml" rel="self"/>
-  <link href="http://xwx517.com/"/>
-  <updated>2014-12-21T10:16:02.460Z</updated>
-  <id>http://xwx517.com/</id>
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
   
-  <author>
-    <name><![CDATA[duliao]]></name>
-    <email><![CDATA[duliao116@163.com]]></email>
-  </author>
-  
-  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[Assert断言]]></title>
-    <link href="http://xwx517.com/2014/12/21/Assert%E6%96%AD%E8%A8%80/"/>
-    <id>http://xwx517.com/2014/12/21/Assert断言/</id>
-    <published>2014-12-21T08:22:29.000Z</published>
-    <updated>2014-12-21T10:15:31.000Z</updated>
-    <content type="html"><![CDATA[<p>最近，遇到一个计算生态补偿金额的业务，具体的计算公式是一个比较麻烦的东西，里面各种数据符号，什么Σ、Φ、α、β之类的玩意，对于我来说，好久不见这些东西，符号该怎么读都差不多忘记了，很是苦恼。最后终于跟客户弄清楚了，公式的意义，就开始编码计算。</p>
+    <title>Assert断言 | Juedi&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="duliao">
+    
+    <meta name="description" content="最近，遇到一个计算生态补偿金额的业务，具体的计算公式是一个比较麻烦的东西，里面各种数据符号，什么Σ、Φ、α、β之类的玩意，对于我来说，好久不见这些东西，符号该怎么读都差不多忘记了，很是苦恼。最后终于跟客户弄清楚了，公式的意义，就开始编码计算。
+公式的数据来源是数据库中查出来的，但数据库中的数据并非就">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Juedi&#39;s blog" title="Juedi&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Juedi&#39;s blog">Juedi&#39;s blog</a></h1>
+				<h2 class="blog-motto">吾当绝地而行，纵万里而不知倦也</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/atom.xml">订阅</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="//baidu.com/s" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="wd" autocomplete="off" maxlength="20" placeholder="搜索" />
+                        <input name=tn type=hidden value="bds">
+                        <input name=cl type=hidden value="3">
+                        <input name=ct type=hidden value="2097152">
+						<input type="hidden" name="si" value="xwx517.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/12/21/Assert断言/" title="Assert断言" itemprop="url">Assert断言</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://xwx517.com" title="duliao">duliao</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-12-21T08:22:29.000Z" itemprop="datePublished">12月 21 2014</time>
+    更新日期:<time datetime="2014-12-21T10:15:31.000Z" itemprop="dateModified">12月 21 2014</time>
+    
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#条件判断方式"><span class="toc-number">1.</span> <span class="toc-text">条件判断方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ibatis方式"><span class="toc-number">2.</span> <span class="toc-text">ibatis方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#spring方式"><span class="toc-number">3.</span> <span class="toc-text">spring方式</span></a></li></ol>
+		</div>
+		
+		<p>最近，遇到一个计算生态补偿金额的业务，具体的计算公式是一个比较麻烦的东西，里面各种数据符号，什么Σ、Φ、α、β之类的玩意，对于我来说，好久不见这些东西，符号该怎么读都差不多忘记了，很是苦恼。最后终于跟客户弄清楚了，公式的意义，就开始编码计算。</p>
 <p>公式的数据来源是数据库中查出来的，但数据库中的数据并非就是完整的、干净的，就是说我再处理α*β这类玩意的时候很有可能从数据库中查出来的是一个非数字字符串，或者null数据。那么问题来了，这样子去计算公式程序必然会报各种异常，然后跟客户反应后客户提出要求：运行公式前，先检查公式需要数据的完整性，如果公式需要的数据不符合要求，就在页面上给客户提示，哪些数据有问题。</p>
 <h2 id="条件判断方式">条件判断方式</h2>
 <p>将数据从数据库中查出，依次按照各个数据的校验条件进行校验，使用返回字符串的形式返回校验结果。</p>
@@ -187,64 +263,241 @@ errorContext.setResource(<span class="keyword">this</span>.getResource());
 //校验完毕，开始执行公式计算
 }
 </code></pre><p>这样，既避免的代码重复，逻辑混乱，也可以更好的返回详细信息。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近，遇到一个计算生态补偿金额的业务，具体的计算公式是一个比较麻烦的东西，里面各种数据符号，什么Σ、Φ、α、β之类的玩意，对于我来说，好久不见这些东西，符号该怎么读都差不多忘记了，很是苦恼。最后终于跟客户弄清楚了，公式的意义，就开始编码计算。</p>
-<p>公式的数据来源是]]>
-    </summary>
-    
-      <category term="Assertion,异常信息" scheme="http://xwx517.com/tags/Assertion-%E5%BC%82%E5%B8%B8%E4%BF%A1%E6%81%AF/"/>
-    
-      <category term="代码艺术" scheme="http://xwx517.com/categories/%E4%BB%A3%E7%A0%81%E8%89%BA%E6%9C%AF/"/>
-    
-  </entry>
   
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://xwx517.com/2014/12/21/hello-world/"/>
-    <id>http://xwx517.com/2014/12/21/hello-world/</id>
-    <published>2014-12-21T04:03:45.000Z</published>
-    <updated>2014-12-11T15:03:28.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+	</div>
+		<footer class="article-footer clearfix">
 
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
-    </summary>
-    
-  </entry>
+  <div class="article-tags">
   
-  <entry>
-    <title><![CDATA[博客之旅]]></title>
-    <link href="http://xwx517.com/2014/12/16/%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/"/>
-    <id>http://xwx517.com/2014/12/16/博客之旅/</id>
-    <published>2014-12-16T15:26:40.000Z</published>
-    <updated>2014-12-17T14:24:39.000Z</updated>
-    <content type="html"><![CDATA[<p>从今天起，也算是开始学会使用Github作为个人博客的平台了。忙活了半天，也用Hexo把基本的博客框架搭建了起来，貌似还是很好用的，不过我才只学会了一点点基本的应用，接下来就是要好好学习下这玩意怎么搞才方便，有能力的话还是自己搞一套皮肤才好玩，毕竟玩这个的就是追求个性。当然了，我不同与那群大牛的是，我以前基本没写过博客，虽然以前叨叨着写这写那的，可总是懒得动手，这次既然费劲把这个弄好了，那以后说什么也得多总结、多记录写心得体会啥的，不能让这番功夫白费了！</p>
-<p>姑且自勉之！</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>从今天起，也算是开始学会使用Github作为个人博客的平台了。忙活了半天，也用Hexo把基本的博客框架搭建了起来，貌似还是很好用的，不过我才只学会了一点点基本的应用，接下来就是要好好学习下这玩意怎么搞才方便，有能力的话还是自己搞一套皮肤才好玩，毕竟玩这个的就是追求个性。当然]]>
-    </summary>
-    
-      <category term="随笔" scheme="http://xwx517.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
+  <span></span> <a href="/tags/Assertion-异常信息/">Assertion,异常信息</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/代码艺术/">代码艺术</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://xwx517.com/2014/12/21/Assert断言/" data-title="Assert断言 | Juedi&#39;s blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/12/21/hello-world/"  title="Hello World">
+ <strong>NEXT:</strong><br/> 
+ <span>Hello World
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#条件判断方式"><span class="toc-number">1.</span> <span class="toc-text">条件判断方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ibatis方式"><span class="toc-number">2.</span> <span class="toc-text">ibatis方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#spring方式"><span class="toc-number">3.</span> <span class="toc-text">spring方式</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
   
-</feed>
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/代码艺术/" title="代码艺术">代码艺术<sup>1</sup></a></li>
+		
+			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Assertion-异常信息/" title="Assertion,异常信息">Assertion,异常信息<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <iframe id="sina_widget_2714073794" style="width:100%; height:500px;" frameborder="0" scrolling="no" src="http://v.t.sina.com.cn/widget/widget_blog.php?uid=2714073794&height=500&skin=wd_02&showpic=1"></iframe>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/http://weibo.com/dlyzzz" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/https://github.com/juedi" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wizicer/iceman" target="_blank" title="Iceman">Iceman</a> © 2014 
+		
+		<a href="http://xwx517.com" target="_blank" title="duliao">duliao</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"juedi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
