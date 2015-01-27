@@ -4,7 +4,7 @@
   <subtitle><![CDATA[吾当绝地而行，纵万里而不知倦也]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xwx517.com/"/>
-  <updated>2015-01-22T14:26:05.030Z</updated>
+  <updated>2015-01-27T16:29:59.075Z</updated>
   <id>http://xwx517.com/</id>
   
   <author>
@@ -13,6 +13,50 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Exception to String]]></title>
+    <link href="http://xwx517.com/2015/01/27/Exception2String/"/>
+    <id>http://xwx517.com/2015/01/27/Exception2String/</id>
+    <published>2015-01-27T12:42:20.000Z</published>
+    <updated>2015-01-27T16:28:02.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="需求概要">需求概要</h3>
+<p>最近设计平台的异常信息处理功能，由于平台前台使用的是Flex，所以没有像传统的Java Web项目那样搞一些500、404之类的跳转页面，而是准备设计成类似于桌面应用那样的弹出框，里面显示一些简单的错误提示信息，然后点击“查看详细&gt;&gt;”按钮展开下面的详细异常堆栈信息。然而这样就需要获取后台异常的详细堆栈信息，以前就知道异常的堆栈信息搞一个<em>e.printStackTrace()</em>就显示在控制台中了，或者用log4j的logger.error(“msg”,e)也就显示在日志中了，还真没想过怎么把异常的堆栈信息搞到字符串中。</p>
+<h3 id="解决方法">解决方法</h3>
+<p>那好，既然需求确定了，那就来看看Throwable类中几个获取堆栈信息的方法</p>
+<figure class="highlight Java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">e.printStackTrace();</div><div class="line">printStackTrace(PrintStream s);</div><div class="line">printStackTrace(PrintWriter s);</div></pre></td></tr></table></figure>
+
+<p>第一个方法不用多说，IDE通常自动生成的，在控制台打印的堆栈信息，看源代码的话会发现，这个方法中其实调用的还是第二个方法，只不过参数传入的系统控制台的err打印输出流，所以这玩意一般在IDE里面看是一片飘红</p>
+<figure class="highlight Java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printStackTrace</span>() {</div><div class="line">    printStackTrace(System.err);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>也就是说，我们可以忽略第一方法，直接看第二个和第三个</p>
+<figure class="highlight Java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printStackTrace</span>(PrintStream s) {</div><div class="line">    printStackTrace(<span class="keyword">new</span> WrappedPrintStream(s));</div><div class="line">}</div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printStackTrace</span>(PrintWriter s) {</div><div class="line">    printStackTrace(<span class="keyword">new</span> WrappedPrintWriter(s));</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>那无非就是一个是字节流，一个是字符流，而且他们最终调用的还是同一个方法</p>
+<figure class="highlight Java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">printStackTrace</span>(PrintStreamOrWriter s);</div></pre></td></tr></table></figure>
+
+<p>好，到此我们就不向下深究了，那接下来的问题就是，怎么把输出流转换成字符串呢？<br>好了，不买关子，直接看代码吧，一目了然</p>
+<figure class="highlight Java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace1</span>(Throwable e){</div><div class="line">	ByteArrayOutputStream os = <span class="keyword">new</span> ByteArrayOutputStream();</div><div class="line">	PrintStream ps = <span class="keyword">new</span> PrintStream(os, <span class="keyword">true</span>);</div><div class="line">	e.printStackTrace(ps);</div><div class="line">	<span class="keyword">return</span> os.toString();</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace2</span>(Throwable e){</div><div class="line">	StringWriter sw = <span class="keyword">new</span> StringWriter();</div><div class="line">	PrintWriter pw = <span class="keyword">new</span> PrintWriter(sw, <span class="keyword">true</span>);</div><div class="line">	e.printStackTrace(pw);</div><div class="line">	<span class="keyword">return</span> sw.toString();</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>由此，我们就得到了我们想要的异常堆栈信息。<br>当然，我们还有其他的方式，比如：</p>
+<figure class="highlight Java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace3</span>(Throwable e){</div><div class="line">	StringBuilder msg = <span class="keyword">new</span> StringBuilder(e.toString());</div><div class="line">	msg.append(<span class="string">"\n"</span>);</div><div class="line">	StackTraceElement[] elements = e.getStackTrace();</div><div class="line">	<span class="keyword">for</span>(StackTraceElement element : elements){</div><div class="line">		msg.append(<span class="string">"\t"</span>)</div><div class="line">		.append(element.getClassName())</div><div class="line">		.append(<span class="string">"."</span>)</div><div class="line">		.append(element.getMethodName())</div><div class="line">		.append(<span class="string">"("</span>)</div><div class="line">		.append(element.getFileName())</div><div class="line">		.append(<span class="string">":"</span>)</div><div class="line">		.append(element.getLineNumber())</div><div class="line">		.append(<span class="string">")"</span>)</div><div class="line">		.append(<span class="string">"\n"</span>);</div><div class="line">	}</div><div class="line">	<span class="keyword">return</span> msg.toString();</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>只是这种方式想必于前面两种还有些不同，因为这种方式获取的异常堆栈信息只是当前异常的，而不能打印到根异常信息去，如果想得到更多的异常信息，难免要做递归的调用去处理，这样，就不如直接使用前面两个更为方便的方法。</p>
+<h3 id="代码示例">代码示例</h3>
+<p>下面为源码例子，可以对这三种方式做下对比看看：</p>
+<figure class="highlight Java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> lang.exceptions;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.ByteArrayOutputStream;</div><div class="line"><span class="keyword">import</span> java.io.PrintStream;</div><div class="line"><span class="keyword">import</span> java.io.PrintWriter;</div><div class="line"><span class="keyword">import</span> java.io.StringWriter;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionUtilTest</span> </span>{</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {</div><div class="line">		<span class="keyword">try</span>{</div><div class="line">			divide(<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">		}<span class="keyword">catch</span>(Exception e){</div><div class="line">			e.printStackTrace(<span class="keyword">new</span> PrintStream(<span class="keyword">new</span> ByteArrayOutputStream()));</div><div class="line">			System.out.println(getStackTrace1(e));</div><div class="line">			System.out.println(getStackTrace2(e));</div><div class="line">			System.out.println(getStackTrace3(e));</div><div class="line">		}</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">divide</span>(<span class="keyword">int</span> a, <span class="keyword">int</span> b){</div><div class="line">		<span class="keyword">int</span> c = <span class="number">0</span>;</div><div class="line">		<span class="comment">//去掉注释，可以查看三种方式输出的差异</span></div><div class="line"><span class="comment">//		try{</span></div><div class="line">			c = a / b;</div><div class="line"><span class="comment">//		}catch(Exception e){</span></div><div class="line"><span class="comment">//			throw new RuntimeException("除法异常", e);</span></div><div class="line"><span class="comment">//		}</span></div><div class="line">		<span class="keyword">return</span> c;</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace1</span>(Throwable e){</div><div class="line">		ByteArrayOutputStream os = <span class="keyword">new</span> ByteArrayOutputStream();</div><div class="line">		PrintStream ps = <span class="keyword">new</span> PrintStream(os, <span class="keyword">true</span>);</div><div class="line">		e.printStackTrace(ps);</div><div class="line">		<span class="keyword">return</span> os.toString();</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace2</span>(Throwable e){</div><div class="line">		StringWriter sw = <span class="keyword">new</span> StringWriter();</div><div class="line">		PrintWriter pw = <span class="keyword">new</span> PrintWriter(sw, <span class="keyword">true</span>);</div><div class="line">		e.printStackTrace(pw);</div><div class="line">		<span class="keyword">return</span> sw.toString();</div><div class="line">	}</div><div class="line">		</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace3</span>(Throwable e){</div><div class="line">		StringBuilder msg = <span class="keyword">new</span> StringBuilder(e.toString());</div><div class="line">		msg.append(<span class="string">"\n"</span>);</div><div class="line">		StackTraceElement[] elements = e.getStackTrace();</div><div class="line">		<span class="keyword">for</span>(StackTraceElement element : elements){</div><div class="line">			msg.append(<span class="string">"\t"</span>)</div><div class="line">			.append(element.getClassName())</div><div class="line">			.append(<span class="string">"."</span>)</div><div class="line">			.append(element.getMethodName())</div><div class="line">			.append(<span class="string">"("</span>)</div><div class="line">			.append(element.getFileName())</div><div class="line">			.append(<span class="string">":"</span>)</div><div class="line">			.append(element.getLineNumber())</div><div class="line">			.append(<span class="string">")"</span>)</div><div class="line">			.append(<span class="string">"\n"</span>);</div><div class="line">		}</div><div class="line">		<span class="keyword">return</span> msg.toString();</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="需求概要">需求概要</h3>
+<p>最近设计平台的异常信息处理功能，由于平台前台使用的是Flex，所以没有像传统的Java Web项目那样搞一些500、404之类的跳转页面，而是准备设计成类似于桌面应用那样的弹出框，里面显示一些简单的错误提示信息，然后点击“查看]]>
+    </summary>
+    
+      <category term="Exception" scheme="http://xwx517.com/tags/Exception/"/>
+    
+      <category term="Java" scheme="http://xwx517.com/categories/Java/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[李雷说英语(6)]]></title>
@@ -124,7 +168,7 @@
     
       <category term="笔记" scheme="http://xwx517.com/tags/note/"/>
     
-      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-english/"/>
+      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-say-english/"/>
     
   </entry>
   
@@ -160,7 +204,7 @@
     
       <category term="笔记" scheme="http://xwx517.com/tags/note/"/>
     
-      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-english/"/>
+      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-say-english/"/>
     
   </entry>
   
@@ -261,7 +305,7 @@
     
       <category term="笔记" scheme="http://xwx517.com/tags/note/"/>
     
-      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-english/"/>
+      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-say-english/"/>
     
   </entry>
   
@@ -318,7 +362,7 @@
     
       <category term="笔记" scheme="http://xwx517.com/tags/note/"/>
     
-      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-english/"/>
+      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-say-english/"/>
     
   </entry>
   
@@ -373,7 +417,7 @@
     
       <category term="笔记" scheme="http://xwx517.com/tags/note/"/>
     
-      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-english/"/>
+      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-say-english/"/>
     
   </entry>
   
@@ -421,7 +465,7 @@
     
       <category term="笔记" scheme="http://xwx517.com/tags/note/"/>
     
-      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-english/"/>
+      <category term="李雷说英语" scheme="http://xwx517.com/categories/lilei-say-english/"/>
     
   </entry>
   
@@ -430,7 +474,7 @@
     <link href="http://xwx517.com/2014/12/21/Assert%E6%96%AD%E8%A8%80/"/>
     <id>http://xwx517.com/2014/12/21/Assert断言/</id>
     <published>2014-12-21T08:22:29.000Z</published>
-    <updated>2014-12-22T15:58:36.000Z</updated>
+    <updated>2015-01-27T16:29:33.000Z</updated>
     <content type="html"><![CDATA[<p>最近，遇到一个计算生态补偿金额的业务，具体的计算公式是一个比较麻烦的东西，里面各种数据符号，什么Σ、Φ、α、β之类的玩意，对于我来说，好久不见这些东西，符号该怎么读都差不多忘记了，很是苦恼。最后终于跟客户弄清楚了，公式的意义，就开始编码计算。</p>
 <p>公式的数据来源是数据库中查出来的，但数据库中的数据并非就是完整的、干净的，就是说我再处理α*β这类玩意的时候很有可能从数据库中查出来的是一个非数字字符串，或者null数据。那么问题来了，这样子去计算公式程序必然会报各种异常，然后跟客户反应后客户提出要求：运行公式前，先检查公式需要数据的完整性，如果公式需要的数据不符合要求，就在页面上给客户提示，哪些数据有问题。</p>
 <h2 id="条件判断方式">条件判断方式</h2>
@@ -606,9 +650,11 @@ errorContext.setResource(<span class="keyword">this</span>.getResource());
     
       <category term="Assertion" scheme="http://xwx517.com/tags/Assertion/"/>
     
-      <category term="异常信息" scheme="http://xwx517.com/tags/exception/"/>
+      <category term="Exception" scheme="http://xwx517.com/tags/Exception/"/>
     
-      <category term="代码艺术" scheme="http://xwx517.com/categories/code-art/"/>
+      <category term="Java" scheme="http://xwx517.com/categories/Java/"/>
+    
+      <category term="代码艺术" scheme="http://xwx517.com/categories/Java/code-art/"/>
     
   </entry>
   
