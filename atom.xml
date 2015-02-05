@@ -4,7 +4,7 @@
   <subtitle><![CDATA[吾当绝地而行，纵万里而不知倦也]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xwx517.com/"/>
-  <updated>2015-01-27T16:29:59.075Z</updated>
+  <updated>2015-02-05T15:25:44.996Z</updated>
   <id>http://xwx517.com/</id>
   
   <author>
@@ -13,6 +13,58 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[面试总结(1)]]></title>
+    <link href="http://xwx517.com/2015/02/05/interview-1/"/>
+    <id>http://xwx517.com/2015/02/05/interview-1/</id>
+    <published>2015-02-05T14:26:02.000Z</published>
+    <updated>2015-02-05T15:25:28.000Z</updated>
+    <content type="html"><![CDATA[<p>昨个去参加面试，今天把一些被问到的问题大概总结一下，每个问题的答案可能都会涉及很多知识，所以不会每个问题都在下面写上答案，以后会针对每个问题单独整理书写，一是更好的总结，二是给自己一个督促。</p>
+<h2 id="面试问题">面试问题</h2>
+<h3 id="1-JVM的类加载机制是什么">1.JVM的类加载机制是什么</h3>
+<h3 id="2-String类为什么使用final">2.String类为什么使用final</h3>
+<h3 id="3-JVM的内存模型时怎样的，假如说你遇到了内存溢出问题，你会怎样定位问题？举两个你用过的查看JVM内存状态的命令（此处应该是jvisualvm，jstat之类的东西）">3.JVM的内存模型时怎样的，假如说你遇到了内存溢出问题，你会怎样定位问题？举两个你用过的查看JVM内存状态的命令（此处应该是jvisualvm，jstat之类的东西）</h3>
+<h3 id="4-有没有做过JVM调优，常用的配制参数有哪些">4.有没有做过JVM调优，常用的配制参数有哪些</h3>
+<h3 id="5-看没看过HashMap源码，实现原理是怎样，画图说明下存储结构和存储顺序">5.看没看过HashMap源码，实现原理是怎样，画图说明下存储结构和存储顺序</h3>
+<h3 id="6-ConcurrentHashMap的原理是怎样，怎么提高性能的">6.ConcurrentHashMap的原理是怎样，怎么提高性能的</h3>
+<p>这个问题请对照源码详细看看如下文章——<a href="http://ifeve.com/concurrenthashmap/" target="_blank" rel="external">深入分析ConcurrentHashMap</a></p>
+<h3 id="7-StringBuffer和StringBuilder的区别是什么，StringBuffer的锁加在什么地方">7.StringBuffer和StringBuilder的区别是什么，StringBuffer的锁加在什么地方</h3>
+<p>前者线程安全，后者线程不安全，因为前者跟后者相比，大部分的方法都加上了synchronized关键字。</p>
+<h3 id="8-Java中都有哪些种类的锁">8.Java中都有哪些种类的锁</h3>
+<p>参看<a href="http://ifeve.com/java_lock_see/" target="_blank" rel="external">Java锁的种类以及辨析</a></p>
+<h3 id="9-写一个单例">9.写一个单例</h3>
+<p>这个问题不多说，单例想必大家都会，但面试官不会问你最简单的，或者说他不会希望听到那个最简单的答案。就我所知创建单例的方法不下于5种了，而我们应该选择线程安全且效率较高的，比如说内部类方式，双重验证方式，而不是只会入门的饱汉饿汉，具体写法需要写文章单独总结。</p>
+<h3 id="10-需求：同时最多只有100个请求并发，超过的返回失败信息">10.需求：同时最多只有100个请求并发，超过的返回失败信息</h3>
+<p>一开始没搞明白面试官想要知道的重点，说了一通废话，后来明白他只是想要一个线程安全的计数器，直接使用AtomicInteger计数就行了</p>
+<h3 id="11-Spring的IOC和AOP分别是什么技术实现的？动态代理和静态代理的区别，都看过哪些Spring源码">11.Spring的IOC和AOP分别是什么技术实现的？动态代理和静态代理的区别，都看过哪些Spring源码</h3>
+<p>反射和动态代理，JDK自动的动态代理实现和CGLib实现。<br>动态代理是运行时动态生成的，静态代理是编译时就已经确定的。<br>源码，看吧……</p>
+<h3 id="12-Struts1和Struts2的区别，Struts2默认的拦截器都有哪些？">12.Struts1和Struts2的区别，Struts2默认的拦截器都有哪些？</h3>
+<h3 id="13-REST是WebService吗？你知道的远程调用还有其他什么方式？">13.REST是WebService吗？你知道的远程调用还有其他什么方式？</h3>
+<h3 id="14-Http是基于什么协议的？TCP的三次握手是由谁发起的，为什么要三次握手">14.Http是基于什么协议的？TCP的三次握手是由谁发起的，为什么要三次握手</h3>
+<h2 id="互联网常问">互联网常问</h2>
+<p>由于简历上面没有写互联网经验，导致下面这些常问的知识没有被问到，不知道会有什么问题，但大概的方向可以作为总结以供后用。</p>
+<h3 id="1-现在常用的一些浏览器的兼容性问到有哪些？浏览器的内核有哪些？有没有用过浏览器调试程序(F12)">1.现在常用的一些浏览器的兼容性问到有哪些？浏览器的内核有哪些？有没有用过浏览器调试程序(F12)</h3>
+<h3 id="2-安全性防范，如XSS攻击，SQL注入">2.安全性防范，如XSS攻击，SQL注入</h3>
+<h3 id="3-高并发策略">3.高并发策略</h3>
+<h3 id="4-放刷策略">4.放刷策略</h3>
+<p>例如Nginx+lua的配制</p>
+<h3 id="5-缓存策略">5.缓存策略</h3>
+<h3 id="6-NoSql数据库，Redis">6.NoSql数据库，Redis</h3>
+<h3 id="7-读写分离，数据同步">7.读写分离，数据同步</h3>
+<h3 id="8-负载均衡，冗余备份">8.负载均衡，冗余备份</h3>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>昨个去参加面试，今天把一些被问到的问题大概总结一下，每个问题的答案可能都会涉及很多知识，所以不会每个问题都在下面写上答案，以后会针对每个问题单独整理书写，一是更好的总结，二是给自己一个督促。</p>
+<h2 id="面试问题">面试问题</h2>
+<h3 id="1-JVM]]>
+    </summary>
+    
+      <category term="Java" scheme="http://xwx517.com/tags/Java/"/>
+    
+      <category term="面试" scheme="http://xwx517.com/categories/interview/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Exception to String]]></title>
