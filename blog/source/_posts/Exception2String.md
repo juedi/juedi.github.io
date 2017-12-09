@@ -4,11 +4,11 @@ categories: [Java]
 tags: Exception
 
 ---
-###需求概要
+### 需求概要
 最近设计平台的异常信息处理功能，由于平台前台使用的是Flex，所以没有像传统的Java Web项目那样搞一些500、404之类的跳转页面，而是准备设计成类似于桌面应用那样的弹出框，里面显示一些简单的错误提示信息，然后点击“查看详细>>”按钮展开下面的详细异常堆栈信息。然而这样就需要获取后台异常的详细堆栈信息，以前就知道异常的堆栈信息搞一个*e.printStackTrace()*就显示在控制台中了，或者用log4j的logger.error("msg",e)也就显示在日志中了，还真没想过怎么把异常的堆栈信息搞到字符串中。
-###解决方法
+### 解决方法
 那好，既然需求确定了，那就来看看Throwable类中几个获取堆栈信息的方法
-``` Java
+```
 e.printStackTrace();
 printStackTrace(PrintStream s);
 printStackTrace(PrintWriter s);
@@ -72,7 +72,7 @@ public static String getStackTrace3(Throwable e){
 }
 ```
 只是这种方式想必于前面两种还有些不同，因为这种方式获取的异常堆栈信息只是当前异常的，而不能打印到根异常信息去，如果想得到更多的异常信息，难免要做递归的调用去处理，这样，就不如直接使用前面两个更为方便的方法。
-###代码示例
+### 代码示例
 下面为源码例子，可以对这三种方式做下对比看看：
 ``` Java
 package lang.exceptions;
