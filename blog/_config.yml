@@ -85,15 +85,15 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: iceman
+theme: maupassant
 exclude_generator:
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git
   repo: https://github.com/juedi/juedi.github.io.git
   branch: master
   message:
 plugins:
-- hexo-generator-feed
+##- hexo-generator-feed
