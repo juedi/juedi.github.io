@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Juedi&#39;s blog</title>
+  <icon>https://www.gravatar.com/avatar/397b41425f3b436f189acd1e3a9eb74a</icon>
+  <subtitle>吾当绝地而行，纵万里而不知倦也</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.iyanan.me/"/>
+  <updated>2018-04-16T01:40:36.017Z</updated>
+  <id>http://blog.iyanan.me/</id>
+  
+  <author>
+    <name>duliao</name>
+    <email>duliao116@163.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node/cleanNode</title>
+    <link href="http://blog.iyanan.me/2018/04/16/node-cleanNode/"/>
+    <id>http://blog.iyanan.me/2018/04/16/node-cleanNode/</id>
+    <published>2018-04-16T01:40:36.000Z</published>
+    <updated>2018-04-16T01:40:36.017Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>不要乱来</title>
+    <link href="http://blog.iyanan.me/2017/12/15/%E4%B8%8D%E8%A6%81%E4%B9%B1%E6%9D%A5/"/>
+    <id>http://blog.iyanan.me/2017/12/15/不要乱来/</id>
+    <published>2017-12-15T03:35:20.000Z</published>
+    <updated>2018-01-29T02:46:48.211Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天看到一个新闻，英国一个大夫在给病人做手术时，在其肝脏上面刻下自己的名字缩写，留作纪念，结果被发现，然后就被起诉了。<br>想想前一段时间的虾米音乐客户端的程序员竟然在注释里写 “穷逼”VIP，也是引起了一阵热议，想来写这个注释的程序员也会受到影响。<br>职业素养，需要时时谨言慎行，不要乱来，不要孟浪</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天看到一个新闻，英国一个大夫在给病人做手术时，在其肝脏上面刻下自己的名字缩写，留作纪念，结果被发现，然后就被起诉了。&lt;br&gt;想想前一段时间的虾米音乐客户端的程序员竟然在注释里写 “穷逼”VIP，也是引起了一阵热议，想来写这个注释的程序员也会受到影响。&lt;br&gt;职业素养，需要
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://blog.iyanan.me/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>IntelliJ IDEA For Mac 快捷键</title>
+    <link href="http://blog.iyanan.me/2017/12/11/idea_mac_keys/"/>
+    <id>http://blog.iyanan.me/2017/12/11/idea_mac_keys/</id>
+    <published>2017-12-11T05:35:04.000Z</published>
+    <updated>2018-01-29T02:46:48.211Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Mac键盘符号和修饰键说明"><a href="#Mac键盘符号和修饰键说明" class="headerlink" title="Mac键盘符号和修饰键说明"></a>Mac键盘符号和修饰键说明</h3><ul><li>⌘ Command</li><li>⇧ Shift</li><li>⌥ Option</li><li>⌃ Control</li><li>↩︎ Return/Enter</li><li>⌫ Delete</li><li>⌦ 向前删除键（Fn+Delete）</li><li>↑ 上箭头</li><li>↓ 下箭头</li><li>← 左箭头</li><li>→ 右箭头</li><li>⇞ Page Up（Fn+↑）</li><li>⇟ Page Down（Fn+↓）</li><li>Home Fn + ←</li><li>End Fn + →</li><li>⇥ 右制表符（Tab键）</li><li>⇤ 左制表符（Shift+Tab）</li><li>⎋ Escape (Esc)</li></ul><h3 id="Editing（编辑）"><a href="#Editing（编辑）" class="headerlink" title="Editing（编辑）"></a>Editing（编辑）</h3><ol><li>⌃Space 基本的代码补全（补全任何类、方法、变量）</li><li>⌃⇧Space 智能代码补全（过滤器方法列表和变量的预期类型）</li><li>⌘⇧↩ 自动结束代码，行末自动添加分号</li><li>⌘P 显示方法的参数信息</li><li>⌃J, Mid. button click 快速查看文档</li><li>⇧F1 查看外部文档（在某些代码上会触发打开浏览器显示相关文档）</li><li>⌘+鼠标放在代码上 显示代码简要信息</li><li>⌘F1 在错误或警告处显示具体描述信息</li><li>⌘N, ⌃↩, ⌃N 生成代码（getter、setter、构造函数、hashCode/equals,toString）</li><li>⌃O 覆盖方法（重写父类方法）</li><li>⌃I 实现方法（实现接口中的方法）</li><li>⌘⌥T 包围代码（使用if..else, try..catch, for, synchronized等包围选中的代码）</li><li>⌘/ 注释/取消注释与行注释</li><li>⌘⌥/ 注释/取消注释与块注释</li><li>⌥↑ 连续选中代码块</li><li>⌥↓ 减少当前选中的代码块</li><li>⌃⇧Q 显示上下文信息</li><li>⌥↩ 显示意向动作和快速修复代码</li><li>⌘⌥L 格式化代码</li><li>⌃⌥O 优化import</li><li>⌃⌥I 自动缩进线</li><li>⇥ / ⇧⇥ 缩进代码 / 反缩进代码</li><li>⌘X 剪切当前行或选定的块到剪贴板</li><li>⌘C 复制当前行或选定的块到剪贴板</li><li>⌘V 从剪贴板粘贴</li><li>⌘⇧V 从最近的缓冲区粘贴</li><li>⌘D 复制当前行或选定的块</li><li>⌘⌫ 删除当前行或选定的块的行</li><li>⌃⇧J 智能的将代码拼接成一行</li><li>⌘↩ 智能的拆分拼接的行</li><li>⇧↩ 开始新的一行</li><li>⌘⇧U 大小写切换</li><li>⌘⇧] / ⌘⇧[ 选择直到代码块结束/开始</li><li>⌥⌦ 删除到单词的末尾（⌦键为Fn+Delete）</li><li>⌥⌫ 删除到单词的开头</li><li>⌘+ / ⌘- 展开 / 折叠代码块</li><li>⌘⇧+ 展开所以代码块</li><li>⌘⇧- 折叠所有代码块</li><li>⌘W 关闭活动的编辑器选项卡</li></ol><h3 id="Search-Replace（查询-替换）"><a href="#Search-Replace（查询-替换）" class="headerlink" title="Search/Replace（查询/替换）"></a>Search/Replace（查询/替换）</h3><ol><li>Double ⇧ 查询任何东西</li><li>⌘F 文件内查找</li><li>⌘G 查找模式下，向下查找</li><li>⌘⇧G 查找模式下，向上查找</li><li>⌘R 文件内替换</li><li>⌘⇧F 全局查找（根据路径）</li><li>⌘⇧R 全局替换（根据路径）</li><li>⌘⇧S 查询结构（Ultimate Edition 版专用，需要在Keymap中设置）</li><li>⌘⇧M 替换结构（Ultimate Edition 版专用，需要在Keymap中设置）</li></ol><h3 id="Usage-Search（使用查询）"><a href="#Usage-Search（使用查询）" class="headerlink" title="Usage Search（使用查询）"></a>Usage Search（使用查询）</h3><ol><li>⌥F7 / ⌘F7 在文件中查找用法 / 在类中查找用法</li><li>⌘⇧F7 在文件中突出显示的用法</li><li>⌘⌥F7 显示用法</li><li>⌘⇧I 查看定义的类,快速查看</li></ol><h3 id="Compile-and-Run（编译和运行）"><a href="#Compile-and-Run（编译和运行）" class="headerlink" title="Compile and Run（编译和运行）"></a>Compile and Run（编译和运行）</h3><ol><li>⌘F9 编译Project</li><li>⌘⇧F9 编译选择的文件、包或模块</li><li>⌃⌥R 弹出 Run 的可选择菜单</li><li>⌃⌥D 弹出 Debug 的可选择菜单</li><li>⌃R 运行</li><li>⌃D 调试</li><li>⌃⇧R, ⌃⇧D 从编辑器运行上下文环境配置</li></ol><h3 id="Debugging（调试）"><a href="#Debugging（调试）" class="headerlink" title="Debugging（调试）"></a>Debugging（调试）</h3><ol><li>F8 进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</li><li>F7 进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</li><li>⇧F7 智能步入，断点所在行上有多个方法调用，会弹出进入哪个方法</li><li>⇧F8 跳出</li><li>⌥F9 运行到光标处，如果光标前有其他断点会进入到该断点</li><li>⌥F8 计算表达式（可以更改变量值使其生效）</li><li>⌘⌥R 恢复程序运行，如果该断点下面代码还有断点则停在下一个断点上</li><li>⌘F8 切换断点（若光标当前行有断点则取消断点，没有则加上断点）</li><li>⌘⇧F8 查看断点信息</li></ol><h3 id="Navigation（导航）"><a href="#Navigation（导航）" class="headerlink" title="Navigation（导航）"></a>Navigation（导航）</h3><ol><li>⌘O 查找类文件</li><li>⌘⇧O 查找所有类型文件、打开文件、打开目录，打开目录需要在输入的内容前面或后面加一个反斜杠/</li><li>⌘⌥O 前往指定的变量 / 方法</li><li>⌃← / ⌃→ 左右切换打开的编辑tab页</li><li>F12 返回到前一个工具窗口</li><li>⎋ 从工具窗口进入代码文件窗口</li><li>⇧⎋ 隐藏当前或最后一个活动的窗口，且光标进入代码文件窗口</li><li>⌘⇧F4 关闭活动run/messages/find/… tab</li><li>⌘L 在当前文件跳转到某一行的指定处</li><li>⌘E 显示最近打开的文件记录列表</li><li>⌘⌥← / ⌘⌥→ 退回 / 前进到上一个操作的地方</li><li>⌘⇧⌫ 跳转到最后一个编辑的地方</li><li>⌥F1 显示当前文件选择目标弹出层，弹出层中有很多目标可以进行选择(如在代码编辑窗口可以选择显示该文件的Finder)</li><li>⌘B / ⌘ 鼠标点击 进入光标所在的方法/变量的接口或是定义处</li><li>⌘⌥B 跳转到实现处，在某个调用的方法名上使用会跳到具体的实现处，可以跳过接口</li><li>⌥ Space, ⌘Y 快速打开光标所在方法、类的定义</li><li>⌃⇧B 跳转到类型声明处</li><li>⌘U 前往当前光标所在方法的父类的方法 / 接口定义</li><li>⌃↓ / ⌃↑ 当前光标跳转到当前文件的前一个/后一个方法名位置</li><li>⌘] / ⌘[ 移动光标到当前所在代码的花括号开始/结束位置</li><li>⌘F12 弹出当前文件结构层，可以在弹出的层上直接输入进行筛选（可用于搜索类中的方法）</li><li>⌃H 显示当前类的层次结构</li><li>⌘⇧H 显示方法层次结构</li><li>⌃⌥H 显示调用层次结构</li><li>F2 / ⇧F2 跳转到下一个/上一个突出错误或警告的位置</li><li>F4 / ⌘↓ 编辑/查看代码源</li><li>⌥ Home 显示到当前文件的导航条</li><li>F3选中文件/文件夹/代码行，添加/取消书签</li><li>⌥F3 选中文件/文件夹/代码行，使用助记符添加/取消书签</li><li>⌃0…⌃9 定位到对应数值的书签位置</li><li>⌘F3 显示所有书签</li></ol><h3 id="Refactoring（重构）"><a href="#Refactoring（重构）" class="headerlink" title="Refactoring（重构）"></a>Refactoring（重构）</h3><ol><li>F5 复制文件到指定目录</li><li>F6 移动文件到指定目录</li><li>⌘⌫ 在文件上为安全删除文件，弹出确认框</li><li>⇧F6 重命名文件</li><li>⌘F6 更改签名</li><li>⌘⌥N 一致性</li><li>⌘⌥M 将选中的代码提取为方法</li><li>⌘⌥V 提取变量</li><li>⌘⌥F 提取字段</li><li>⌘⌥C 提取常量</li><li>⌘⌥P 提取参数</li></ol><h3 id="VCS-Local-History（版本控制-本地历史记录）"><a href="#VCS-Local-History（版本控制-本地历史记录）" class="headerlink" title="VCS/Local History（版本控制/本地历史记录）"></a>VCS/Local History（版本控制/本地历史记录）</h3><ol><li>⌘K 提交代码到版本控制器</li><li>⌘T 从版本控制器更新代码</li><li>⌥⇧C 查看最近的变更记录</li><li>⌃C 快速弹出版本控制器操作面板</li><li>九、Live Templates（动态代码模板）</li><li></li><li>⌘⌥J 弹出模板选择窗口，将选定的代码使用动态模板包住</li><li>⌘J 插入自定义动态代码模板</li></ol><h3 id="General（通用）"><a href="#General（通用）" class="headerlink" title="General（通用）"></a>General（通用）</h3><ol><li>⌘1…⌘9 打开相应编号的工具窗口</li><li>⌘S 保存所有</li><li>⌘⌥Y 同步、刷新</li><li>⌃⌘F 切换全屏模式</li><li>⌘⇧F12 切换最大化编辑器</li><li>⌥⇧F 添加到收藏夹</li><li>⌥⇧I 检查当前文件与当前的配置文件</li><li>§⌃, ⌃` 快速切换当前的scheme（切换主题、代码样式等）</li><li>⌘, 打开IDEA系统设置</li><li>⌘; 打开项目结构对话框</li><li>⇧⌘A 查找动作（可设置相关选项）</li><li>⌃⇥ 编辑窗口标签和工具窗口之间切换（如果在切换的过程加按上delete，则是关闭对应选中的窗口）</li></ol><h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h3><p>⌘⇧8 竖编辑模式</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Mac键盘符号和修饰键说明&quot;&gt;&lt;a href=&quot;#Mac键盘符号和修饰键说明&quot; class=&quot;headerlink&quot; title=&quot;Mac键盘符号和修饰键说明&quot;&gt;&lt;/a&gt;Mac键盘符号和修饰键说明&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;⌘ Command&lt;/li&gt;
+&lt;li&gt;⇧
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://blog.iyanan.me/categories/tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>queryForLong</title>
+    <link href="http://blog.iyanan.me/2017/12/11/queryForLong/"/>
+    <id>http://blog.iyanan.me/2017/12/11/queryForLong/</id>
+    <published>2017-12-11T05:35:04.000Z</published>
+    <updated>2018-01-29T02:46:48.211Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用spring jdbcTemplate查询单值结果时，例如queryForLong、queryForInt这种，如果数据库返回的结果为空，就会报错，而我们希望的结果，一般都是有值的话就返回值，没值的花就返回null<br>这样，就要使用这种方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.query(sql, values, new ResultSetExtractor&lt;Long&gt;()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public Long extractData(ResultSet rs) throws SQLException, DataAccessException&#123;</span><br><span class="line">        if(rs.next())&#123;</span><br><span class="line">            return rs.getLong(column);</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>不能采用这样的方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.queryForObject(sql, values, Long.class);</span><br></pre></td></tr></table></figure><p>也不能采用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.queryForObject(sql, values, someRowMapper)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;使用spring jdbcTemplate查询单值结果时，例如queryForLong、queryForInt这种，如果数据库返回的结果为空，就会报错，而我们希望的结果，一般都是有值的话就返回值，没值的花就返回null&lt;br&gt;这样，就要使用这种方式&lt;/p&gt;
+&lt;figure 
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://blog.iyanan.me/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux文件上传下载工具-lrzsz</title>
+    <link href="http://blog.iyanan.me/2015/03/08/linux-sz-rz/"/>
+    <id>http://blog.iyanan.me/2015/03/08/linux-sz-rz/</id>
+    <published>2015-03-08T15:17:29.000Z</published>
+    <updated>2018-01-29T02:46:48.211Z</updated>
+    
+    <content type="html"><![CDATA[<p>相信很多使用linux系统的人都少不了向服务器上传、下载文件，以前不怎么了解liunx命令的时候就使用<a href="https://filezilla-project.org/" target="_blank" rel="noopener">filezilla</a>作为windows下的工具。后来发现了一个更加方便的东西：lrzsz。</p><h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><p>root账号登陆，执行下面的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz</span><br><span class="line">tar zxvf lrzsz-0.12.20.tar.gz</span><br><span class="line"><span class="built_in">cd</span> lrzsz-0.12.20</span><br><span class="line">./configure</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure></p><p>上面的命令默认把lsz和lrz安装到了/usr/local/bin/目录下，使用起来不方便，下面创建软连接，并将lsz命名为sz，lrz命名为rz：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/bin</span><br><span class="line">ln -s /usr/local/bin/lrz rz</span><br><span class="line">ln -s /usr/local/bin/lsz sz</span><br></pre></td></tr></table></figure></p><h3 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y lrzsz</span><br></pre></td></tr></table></figure><h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sz filename</span><br></pre></td></tr></table></figure><p>记忆方式，sz的s当成send，意味着是服务端发送数据，那在客户端就自然是下载了。</p><h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rz</span><br></pre></td></tr></table></figure><p>在弹出的文件选择框中选择文件上传。<br>记忆方式，rz的s当成receive，意味着是服务端接收数据，那在客户端就自然是上传了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;相信很多使用linux系统的人都少不了向服务器上传、下载文件，以前不怎么了解liunx命令的时候就使用&lt;a href=&quot;https://filezilla-project.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;filezilla&lt;/a&gt;作
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.iyanan.me/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>面试总结(1)</title>
+    <link href="http://blog.iyanan.me/2015/02/05/interview-1/"/>
+    <id>http://blog.iyanan.me/2015/02/05/interview-1/</id>
+    <published>2015-02-05T14:26:02.000Z</published>
+    <updated>2018-01-29T02:46:48.211Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨个去参加面试，今天把一些被问到的问题大概总结一下，每个问题的答案可能都会涉及很多知识，所以不会每个问题都在下面写上答案，以后会针对每个问题单独整理书写，一是更好的总结，二是给自己一个督促。</p><h2 id="面试问题"><a href="#面试问题" class="headerlink" title="面试问题"></a>面试问题</h2><ol><li><p>VM的类加载机制是什么</p></li><li><p>String类为什么使用final</p></li><li><p>JVM的内存模型时怎样的，假如说你遇到了内存溢出问题，你会怎样定位问题？举两个你用过的查看JVM内存状态的命令<br>此处应该是jvisualvm，jstat之类的东西</p></li><li><p>有没有做过JVM调优，常用的配制参数有哪些</p></li><li><p>看没看过HashMap源码，实现原理是怎样，画图说明下存储结构和存储顺序</p></li><li><p>ConcurrentHashMap的原理是怎样，怎么提高性能的<br>这个问题请对照源码详细看看如下文章——<a href="http://ifeve.com/concurrenthashmap/" target="_blank" rel="noopener">深入分析ConcurrentHashMap</a></p></li><li>StringBuffer和StringBuilder的区别是什么，StringBuffer的锁加在什么地方<br>前者线程安全，后者线程不安全，因为前者跟后者相比，大部分的方法都加上了synchronized关键字。</li><li>Java中都有哪些种类的锁<br>参看<a href="http://ifeve.com/java_lock_see/" target="_blank" rel="noopener">Java锁的种类以及辨析</a></li><li>写一个单例<br>这个问题不多说，单例想必大家都会，但面试官不会问你最简单的，或者说他不会希望听到那个最简单的答案。就我所知创建单例的方法不下于5种了，而我们应该选择线程安全且效率较高的，比如说内部类方式，双重验证方式，而不是只会入门的饱汉饿汉，具体写法需要写文章单独总结。</li><li>需求：同时最多只有100个请求并发，超过的返回失败信息<br>一开始没搞明白面试官想要知道的重点，说了一通废话，后来明白他只是想要一个线程安全的计数器，直接使用AtomicInteger计数就行了</li><li>Spring的IOC和AOP分别是什么技术实现的？动态代理和静态代理的区别，都看过哪些Spring源码<br>反射和动态代理，JDK自动的动态代理实现和CGLib实现。<br>动态代理是运行时动态生成的，静态代理是编译时就已经确定的。<br>源码，看吧……</li><li><p>Struts1和Struts2的区别，Struts2默认的拦截器都有哪些？</p></li><li><p>REST是WebService吗？你知道的远程调用还有其他什么方式？</p></li><li><p>Http是基于什么协议的？TCP的三次握手是由谁发起的，为什么要三次握手</p></li></ol><h2 id="互联网常问"><a href="#互联网常问" class="headerlink" title="互联网常问"></a>互联网常问</h2><p>由于简历上面没有写互联网经验，导致下面这些常问的知识没有被问到，不知道会有什么问题，但大概的方向可以作为总结以供后用。</p><ol><li>现在常用的一些浏览器的兼容性问到有哪些？浏览器的内核有哪些？有没有用过浏览器调试程序(F12)</li></ol><ol start="2"><li><p>安全性防范，如XSS攻击，SQL注入</p></li><li><p>高并发策略</p></li><li><p>放刷策略<br>例如Nginx+lua的配制</p></li><li>缓存策略</li><li>NoSql数据库，Redis</li><li>读写分离，数据同步</li><li>负载均衡，冗余备份</li></ol><p>暂时先把问题放在这里，然后一个问题一个问题的深入探索，以后这文章有得写了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;昨个去参加面试，今天把一些被问到的问题大概总结一下，每个问题的答案可能都会涉及很多知识，所以不会每个问题都在下面写上答案，以后会针对每个问题单独整理书写，一是更好的总结，二是给自己一个督促。&lt;/p&gt;
+&lt;h2 id=&quot;面试问题&quot;&gt;&lt;a href=&quot;#面试问题&quot; class=&quot;
+      
+    
+    </summary>
+    
+      <category term="面试" scheme="http://blog.iyanan.me/categories/interview/"/>
+    
+    
+      <category term="Java" scheme="http://blog.iyanan.me/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Exception to String</title>
+    <link href="http://blog.iyanan.me/2015/01/27/Exception2String/"/>
+    <id>http://blog.iyanan.me/2015/01/27/Exception2String/</id>
+    <published>2015-01-27T12:42:20.000Z</published>
+    <updated>2018-01-29T02:46:48.211Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="需求概要"><a href="#需求概要" class="headerlink" title="需求概要"></a>需求概要</h3><p>最近设计平台的异常信息处理功能，由于平台前台使用的是Flex，所以没有像传统的Java Web项目那样搞一些500、404之类的跳转页面，而是准备设计成类似于桌面应用那样的弹出框，里面显示一些简单的错误提示信息，然后点击“查看详细&gt;&gt;”按钮展开下面的详细异常堆栈信息。然而这样就需要获取后台异常的详细堆栈信息，以前就知道异常的堆栈信息搞一个<em>e.printStackTrace()</em>就显示在控制台中了，或者用log4j的logger.error(“msg”,e)也就显示在日志中了，还真没想过怎么把异常的堆栈信息搞到字符串中。</p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>那好，既然需求确定了，那就来看看Throwable类中几个获取堆栈信息的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">e.printStackTrace();</span><br><span class="line">printStackTrace(PrintStream s);</span><br><span class="line">printStackTrace(PrintWriter s);</span><br></pre></td></tr></table></figure></p><p>第一个方法不用多说，IDE通常自动生成的，在控制台打印的堆栈信息，看源代码的话会发现，这个方法中其实调用的还是第二个方法，只不过参数传入的系统控制台的err打印输出流，所以这玩意一般在IDE里面看是一片飘红<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printStackTrace</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    printStackTrace(System.err);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>也就是说，我们可以忽略第一方法，直接看第二个和第三个<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printStackTrace</span><span class="params">(PrintStream s)</span> </span>&#123;</span><br><span class="line">    printStackTrace(<span class="keyword">new</span> WrappedPrintStream(s));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printStackTrace</span><span class="params">(PrintWriter s)</span> </span>&#123;</span><br><span class="line">    printStackTrace(<span class="keyword">new</span> WrappedPrintWriter(s));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>那无非就是一个是字节流，一个是字符流，而且他们最终调用的还是同一个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">printStackTrace</span><span class="params">(PrintStreamOrWriter s)</span></span>;</span><br></pre></td></tr></table></figure></p><p>好，到此我们就不向下深究了，那接下来的问题就是，怎么把输出流转换成字符串呢？<br>好了，不买关子，直接看代码吧，一目了然<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace1</span><span class="params">(Throwable e)</span></span>&#123;</span><br><span class="line">ByteArrayOutputStream os = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">PrintStream ps = <span class="keyword">new</span> PrintStream(os, <span class="keyword">true</span>);</span><br><span class="line">e.printStackTrace(ps);</span><br><span class="line"><span class="keyword">return</span> os.toString();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace2</span><span class="params">(Throwable e)</span></span>&#123;</span><br><span class="line">StringWriter sw = <span class="keyword">new</span> StringWriter();</span><br><span class="line">PrintWriter pw = <span class="keyword">new</span> PrintWriter(sw, <span class="keyword">true</span>);</span><br><span class="line">e.printStackTrace(pw);</span><br><span class="line"><span class="keyword">return</span> sw.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>由此，我们就得到了我们想要的异常堆栈信息。<br>当然，我们还有其他的方式，比如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace3</span><span class="params">(Throwable e)</span></span>&#123;</span><br><span class="line">StringBuilder msg = <span class="keyword">new</span> StringBuilder(e.toString());</span><br><span class="line">msg.append(<span class="string">"\n"</span>);</span><br><span class="line">StackTraceElement[] elements = e.getStackTrace();</span><br><span class="line"><span class="keyword">for</span>(StackTraceElement element : elements)&#123;</span><br><span class="line">msg.append(<span class="string">"\t"</span>)</span><br><span class="line">.append(element.getClassName())</span><br><span class="line">.append(<span class="string">"."</span>)</span><br><span class="line">.append(element.getMethodName())</span><br><span class="line">.append(<span class="string">"("</span>)</span><br><span class="line">.append(element.getFileName())</span><br><span class="line">.append(<span class="string">":"</span>)</span><br><span class="line">.append(element.getLineNumber())</span><br><span class="line">.append(<span class="string">")"</span>)</span><br><span class="line">.append(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> msg.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>只是这种方式想必于前面两种还有些不同，因为这种方式获取的异常堆栈信息只是当前异常的，而不能打印到根异常信息去，如果想得到更多的异常信息，难免要做递归的调用去处理，这样，就不如直接使用前面两个更为方便的方法。</p><h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><p>下面为源码例子，可以对这三种方式做下对比看看：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> lang.exceptions;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.ByteArrayOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.StringWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionUtilTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">divide(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">&#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">e.printStackTrace(<span class="keyword">new</span> PrintStream(<span class="keyword">new</span> ByteArrayOutputStream()));</span><br><span class="line">System.out.println(getStackTrace1(e));</span><br><span class="line">System.out.println(getStackTrace2(e));</span><br><span class="line">System.out.println(getStackTrace3(e));</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> c = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//去掉注释，可以查看三种方式输出的差异</span></span><br><span class="line"><span class="comment">//try&#123;</span></span><br><span class="line">c = a / b;</span><br><span class="line"><span class="comment">//&#125;catch(Exception e)&#123;</span></span><br><span class="line"><span class="comment">//throw new RuntimeException("除法异常", e);</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace1</span><span class="params">(Throwable e)</span></span>&#123;</span><br><span class="line">ByteArrayOutputStream os = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">PrintStream ps = <span class="keyword">new</span> PrintStream(os, <span class="keyword">true</span>);</span><br><span class="line">e.printStackTrace(ps);</span><br><span class="line"><span class="keyword">return</span> os.toString();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace2</span><span class="params">(Throwable e)</span></span>&#123;</span><br><span class="line">StringWriter sw = <span class="keyword">new</span> StringWriter();</span><br><span class="line">PrintWriter pw = <span class="keyword">new</span> PrintWriter(sw, <span class="keyword">true</span>);</span><br><span class="line">e.printStackTrace(pw);</span><br><span class="line"><span class="keyword">return</span> sw.toString();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStackTrace3</span><span class="params">(Throwable e)</span></span>&#123;</span><br><span class="line">StringBuilder msg = <span class="keyword">new</span> StringBuilder(e.toString());</span><br><span class="line">msg.append(<span class="string">"\n"</span>);</span><br><span class="line">StackTraceElement[] elements = e.getStackTrace();</span><br><span class="line"><span class="keyword">for</span>(StackTraceElement element : elements)&#123;</span><br><span class="line">msg.append(<span class="string">"\t"</span>)</span><br><span class="line">.append(element.getClassName())</span><br><span class="line">.append(<span class="string">"."</span>)</span><br><span class="line">.append(element.getMethodName())</span><br><span class="line">.append(<span class="string">"("</span>)</span><br><span class="line">.append(element.getFileName())</span><br><span class="line">.append(<span class="string">":"</span>)</span><br><span class="line">.append(element.getLineNumber())</span><br><span class="line">.append(<span class="string">")"</span>)</span><br><span class="line">.append(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> msg.toString();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;需求概要&quot;&gt;&lt;a href=&quot;#需求概要&quot; class=&quot;headerlink&quot; title=&quot;需求概要&quot;&gt;&lt;/a&gt;需求概要&lt;/h3&gt;&lt;p&gt;最近设计平台的异常信息处理功能，由于平台前台使用的是Flex，所以没有像传统的Java Web项目那样搞一些500、404之
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://blog.iyanan.me/categories/Java/"/>
+    
+    
+      <category term="Exception" scheme="http://blog.iyanan.me/tags/Exception/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李雷说英语(6)</title>
+    <link href="http://blog.iyanan.me/2014/12/28/%E6%9D%8E%E9%9B%B7%E8%AF%B4%E8%8B%B1%E8%AF%AD-6/"/>
+    <id>http://blog.iyanan.me/2014/12/28/李雷说英语-6/</id>
+    <published>2014-12-28T14:50:20.000Z</published>
+    <updated>2018-01-29T02:46:48.227Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="时态"><a href="#时态" class="headerlink" title="时态"></a>时态</h2><ol><li>任何一个英文句子 = 结构 + 时态</li><li>不同的时态中，主语和宾语都没有改变，只有谓语发生了改变，也就是说，学习时态就是学习不同的谓语形式。大部分情况下，谓语都是两个单词，只有一般现在时和一般过去时是一个单词。<ol><li>一般现在时 do</li><li>一般过去时 did</li><li>现在进行时 am doing</li><li>过去进行时 was doing</li><li>现在完成时 have done</li><li>过去完成时 had done</li><li>一般将来时 will do</li><li>过去将来时 would do</li></ol></li></ol><h3 id="一般现在时"><a href="#一般现在时" class="headerlink" title="一般现在时"></a>一般现在时</h3><ol><li>用来翻译【现阶段】【经常发生】的动作<ol><li>狼只吃肉(Wolves eat meat only)</li><li>Zoro几乎每天都在网吧玩游戏(Zoro <strong>plays</strong> games at an Internet bar almost everyday)</li><li>现单三，一般现在时，主语为单数，主语为第三人称时，谓语+s/es</li><li>流川枫总是在上课的时候睡觉(LCF always sleeps in class)</li><li>冬天，他经常穿那件黑色毛衣(He often wears that black sweater in winter)</li></ol></li><li>用来翻译客观真理<ol><li>co是一种有毒气体(Carbon monoxide is a type of toxic gas)–主系表结构</li><li>在空气介质中，声音每秒传播340米(In the medium of air, sound travels 340 meters per second)</li></ol></li><li>现单三<ol><li>She <strong>loves</strong> you.</li><li>Jack <strong>watches</strong> porns every night.<em>牛逼</em></li><li>My sister <strong>studies</strong> very hard.</li></ol></li><li>动词的单三形式<ol><li>goes, does, has三个特殊情况</li><li>s/x/sh/ch + es</li><li>辅音+y 的单词去y+es，fly-&gt;flies,deny-&gt;denies,study-&gt;studies</li><li>非以上情况，统统+s, stays, plays, loves</li></ol></li></ol><h3 id="一般过去时"><a href="#一般过去时" class="headerlink" title="一般过去时"></a>一般过去时</h3><ol><li>用来翻译【过去的所有动作】</li><li>昨天，我把硬盘里的电影都删了(I deleted the movies in the hard disk yesterday)</li><li>她是我女朋友(She is my girlfriend)-&gt;她曾经是我女朋友(She was my girlfriend)</li><li>John去世了(John died)-&gt;两小时前，John去世了(Two hours ago, John died)</li></ol><h3 id="完成时"><a href="#完成时" class="headerlink" title="完成时"></a>完成时</h3><h4 id="前奏"><a href="#前奏" class="headerlink" title="前奏"></a>前奏</h4><ol><li>sleep 睡觉 在时间上持续，<em>延续性动词</em><ol><li>live, stay</li></ol></li><li>alive adj.有生命的 -&gt;die vi.死亡-&gt;dead adj.无生命的<br>die在英文中，被称为<em>瞬间动词</em><ol><li>go, buy, borrow, join, die, open, close, begin/start, leave</li></ol></li><li><strong>一段时间不能与瞬间动词共存</strong><ol><li>He <em>went</em> to HK <em>for three weeks</em>.病句</li></ol></li><li>延续性动词可以当做瞬间动词来用，瞬间动词不能当做延续性动词来用。<ol><li>go-&gt;stay\live, buy-&gt;own\have\get\use…</li><li>He stayed in HK for 3 weeks.</li></ol></li><li>瞬间动词-&gt;延续性动词：【be+相关adj】<ol><li>open -&gt; be open</li><li>die -&gt; be dead</li><li>close -&gt; be closed</li><li>leave -&gt; be away</li><li>start/begin -&gt; be on</li></ol></li></ol><h4 id="现在完成时"><a href="#现在完成时" class="headerlink" title="现在完成时"></a>现在完成时</h4><ol><li><strong>现在完成时和过去的时间不能共存</strong></li><li>has/have done</li><li><em>现完一 用来翻译过去的瞬间动作。</em><ol><li>John died -&gt; John has died</li><li>你爸抛弃了我们(Your dad abandoned us-&gt;Your dad has abandoned us)</li><li>十年前，你爸抛弃了我们(10 years ago, your dad abandoned us)，不能写为现在完成时</li></ol></li><li>already 不是完成时专属</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;时态&quot;&gt;&lt;a href=&quot;#时态&quot; class=&quot;headerlink&quot; title=&quot;时态&quot;&gt;&lt;/a&gt;时态&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;任何一个英文句子 = 结构 + 时态&lt;/li&gt;
+&lt;li&gt;不同的时态中，主语和宾语都没有改变，只有谓语发生了改变，也就是说，学习时
+      
+    
+    </summary>
+    
+      <category term="李雷说英语" scheme="http://blog.iyanan.me/categories/lilei-say-english/"/>
+    
+    
+      <category term="英语" scheme="http://blog.iyanan.me/tags/english/"/>
+    
+      <category term="笔记" scheme="http://blog.iyanan.me/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李雷说英语(5)</title>
+    <link href="http://blog.iyanan.me/2014/12/28/%E6%9D%8E%E9%9B%B7%E8%AF%B4%E8%8B%B1%E8%AF%AD-5/"/>
+    <id>http://blog.iyanan.me/2014/12/28/李雷说英语-5/</id>
+    <published>2014-12-28T14:32:20.000Z</published>
+    <updated>2018-01-29T02:46:48.227Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="音标"><a href="#音标" class="headerlink" title="音标"></a>音标</h2><h3 id="元音"><a href="#元音" class="headerlink" title="元音"></a>元音</h3><ol><li>E apple about us often A I O our, 元音音标</li><li>a horse, an hour, a 和 an的选择，与后方单词的首字母无关，取决于后方单词的第一个发音，a+辅音，an+元音。例如：a European,an egg<br>###辅音</li><li>p t k g f s h b d w m r z n(鼻音) l(边音) 约等于汉语拼音的读音，l n 元前拼(light /lait/, night /nait/)，元后英(cell /sel/, pain /pein/)，元音前发拼音的读音，元音后发英文的读音（大部分情况下)。</li><li>th 咬舌音，thank, this, mother</li><li>七 喜</li><li>tr dr tree /tri/ dream /drim/</li><li>野 鸡</li><li>ring sing</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;音标&quot;&gt;&lt;a href=&quot;#音标&quot; class=&quot;headerlink&quot; title=&quot;音标&quot;&gt;&lt;/a&gt;音标&lt;/h2&gt;&lt;h3 id=&quot;元音&quot;&gt;&lt;a href=&quot;#元音&quot; class=&quot;headerlink&quot; title=&quot;元音&quot;&gt;&lt;/a&gt;元音&lt;/h3&gt;&lt;ol&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="李雷说英语" scheme="http://blog.iyanan.me/categories/lilei-say-english/"/>
+    
+    
+      <category term="英语" scheme="http://blog.iyanan.me/tags/english/"/>
+    
+      <category term="笔记" scheme="http://blog.iyanan.me/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李雷说英语(4)</title>
+    <link href="http://blog.iyanan.me/2014/12/26/%E6%9D%8E%E9%9B%B7%E8%AF%B4%E8%8B%B1%E8%AF%AD-4/"/>
+    <id>http://blog.iyanan.me/2014/12/26/李雷说英语-4/</id>
+    <published>2014-12-26T15:02:20.000Z</published>
+    <updated>2018-01-29T02:46:48.227Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="主系表"><a href="#主系表" class="headerlink" title="主系表"></a>主系表</h2><h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><ol><li>动词分为及物动词(vt)，不及物动词(vi)，系动词(linkV,be)</li><li>表语是<em>系动词</em>后方的 <em>名词/形容词/副词/介词短语</em></li><li>介词短语 = 介词 + 名词<ol><li>on the desk</li><li>in the fridge</li><li>from China</li></ol></li><li>系动词 = linkV(联系动词) + be动词</li><li>系动词为<strong><em>联系动词</em></strong>时，主系表部分可以直译(主干部分)，跟主谓结构类似</li></ol><h3 id="联系动词"><a href="#联系动词" class="headerlink" title="联系动词"></a>联系动词</h3><ol><li>好像……<ol><li>seem | seem to be, appear | appear to be </li><li>你好像很累(<strong>You seem tired</strong> | You seem to be tired)</li><li>你好像不开心(<strong>You appear unhappy</strong> | You appear to be unhappy)</li></ol></li><li>变……,变成……<ol><li>become, get, turn, grow, go, come(基本可以通用)</li><li>渐渐地，我们变成了陌生人(<strong>We became strangers gradually</strong>)</li></ol></li><li>通常我们判断一个词是形容词的方式是：……的 = adj.<ol><li>绿色的(green)</li><li>树上的(on the tree) 冰箱里的(in the fridge) 桌子上的(on the desk)</li><li>介词短语修饰名词，放在名词后面(<strong>leaves on the tree</strong>) </li><li>普通形容词就不必 green leaves</li><li>贵阳的天气通常在十月中旬变冷(<strong>The weather in GY often gets cold in mid-October</strong>)</li></ol></li><li>保持…… keep, stay<ol><li>保持安静(keep quiet. stay quiet)</li><li>保持冷静(keep cool. stay cool)</li><li>求知若饥，虚心若愚(<strong>Stay hungry, stay foolish</strong>)</li></ol></li><li>看上去…… 5个感官动词,look, smell, taste, sound, feel<ol><li>like vt.喜欢 prep.像</li><li>这汤喝上去有点咸(The soup tastes a little salty)</li><li>你看上去就像一个小学生(You look like a pupil)</li><li>腐烂的肉闻上去就像死耗子(Rotten meat smells like dead rats)</li></ol></li><li>祈使句，是有主语的，主语是<strong><em>你or你们</em></strong>，被省略掉了。</li><li>adj.修饰n. 不能根据句意判断，adj.后方有n.就修饰n.没有n.就不修饰人任何名词<ol><li>雅典娜是一个可爱的女孩(Athena is a cute girl)</li><li>火舞很性感(Mai is sexy)</li></ol></li><li>去掉修饰n.的adj.，副词，时间，地点就得到了句子的主干<ol><li>冰箱里的肉已经变臭了( The meat in the fridge already went smelly )</li><li>我很喜欢她左胸上的纹身(I like the tattoo on her breast very much)</li></ol></li></ol><h3 id="be动词"><a href="#be动词" class="headerlink" title="be动词"></a>be动词</h3><ol><li>home, here, there地点副词，可以直接放在不及物动词后面使用<ol><li>go home vi+地点副词</li><li>come here vi+地点副词</li><li>go to school vi+介词+n</li><li><strong>特殊记忆 at home，此处home为名词</strong></li></ol></li><li>【主干部分】不含动词的汉语句子，使用主系表结构翻译<ol><li>他是我死党(He is my BFF)</li><li>我在这里(I am here)</li><li>洗衣机里的衣服是干净的(The clothes in the washming machine are clean)</li><li>我好无聊啊(I am bored)</li><li>我是个无趣的人(I am boring)</li></ol></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;主系表&quot;&gt;&lt;a href=&quot;#主系表&quot; class=&quot;headerlink&quot; title=&quot;主系表&quot;&gt;&lt;/a&gt;主系表&lt;/h2&gt;&lt;h3 id=&quot;预备知识&quot;&gt;&lt;a href=&quot;#预备知识&quot; class=&quot;headerlink&quot; title=&quot;预备知识&quot;&gt;&lt;/a&gt;预备知
+      
+    
+    </summary>
+    
+      <category term="李雷说英语" scheme="http://blog.iyanan.me/categories/lilei-say-english/"/>
+    
+    
+      <category term="英语" scheme="http://blog.iyanan.me/tags/english/"/>
+    
+      <category term="笔记" scheme="http://blog.iyanan.me/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李雷说英语(3)</title>
+    <link href="http://blog.iyanan.me/2014/12/24/%E6%9D%8E%E9%9B%B7%E8%AF%B4%E8%8B%B1%E8%AF%AD-3/"/>
+    <id>http://blog.iyanan.me/2014/12/24/李雷说英语-3/</id>
+    <published>2014-12-24T15:02:20.000Z</published>
+    <updated>2018-01-29T02:46:48.227Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="主谓双宾-三物一动作"><a href="#主谓双宾-三物一动作" class="headerlink" title="主谓双宾(三物一动作)"></a>主谓双宾(三物一动作)</h2><ol><li>主谓 + 间接宾语 + 直接宾语=&gt;主谓 + 间宾 + 直宾=&gt;主谓 + 双宾</li><li>主谓双宾结构用来表示人与人之间的物质或信息传递<ol><li>sb give sb sth(某人给某人某物)</li><li>give并非单指“给”，而是代表传递方式，类似的还有pass, teach, tell等</li><li>tell vt. 告诉，给……说，不要只记得“告诉”还要记得“给……说”，比如某人给某人说某事。类似的单词还有：show 给……展示， buy 给……买，leave 给……留下，send 给……发送</li><li>在情人节那天，她给了我她的初吻(<strong><em>She gave me her first kiss on Valentine’s Day</em></strong>)</li><li>时间前面的介词习惯：at+时刻，on+天，in + &gt;天(比如月，年等)</li><li>他的父母给他留下了很多钱(<strong><em>His parents left him a lot of money</em></strong>)</li></ol></li><li>时间地点能否写句首？<ol><li>可以，不过要加上逗号，与后面的句子分割开。</li><li><strong><em>Yesterday, she went to HK.</em></strong></li></ol></li><li>主谓双宾的另一种写法<ol><li>sb give sth to sb.</li><li><strong><em>She gave her first kiss to me.</em></strong></li><li><strong><em>His parents left a lot of money to him.</em></strong></li></ol></li><li>某人给某人买了某物 sb buy sb sth是对的，sb buy sth to sb是错的，应该写为sb buy sth for sb. 为什么呢？<ol><li>他打破了窗子。他把窗子打破了。</li><li>他离开了我们。<strong><em>他把我们离开了。</em></strong></li><li>中文有中文的语言习惯，英文也有，这点，说不上理由。</li><li>常用的使用for的动词有：<strong><em>make, order, buy, sing, choose</em></strong></li><li>我给你点了一杯拿铁(<strong><em>I ordered you a cup of latte =&gt; I ordered a cup of latte for you</em></strong>)</li><li>目击证人已经把你的罪行告诉我们了(<strong><em>The witness already told your crime to us</em></strong>)。其中“已经”是特殊副词，可以放在谓语前方，也可以放在结构后方</li></ol></li><li>我已经把它给小新了(<em>I already gave <strong>it</strong> to XX</em>)，直接宾语为代词时，只能写为sb give sth to sb，不能写为 I already gave XX it.</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;主谓双宾-三物一动作&quot;&gt;&lt;a href=&quot;#主谓双宾-三物一动作&quot; class=&quot;headerlink&quot; title=&quot;主谓双宾(三物一动作)&quot;&gt;&lt;/a&gt;主谓双宾(三物一动作)&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;主谓 + 间接宾语 + 直接宾语=&amp;gt;主谓 + 间宾 +
+      
+    
+    </summary>
+    
+      <category term="李雷说英语" scheme="http://blog.iyanan.me/categories/lilei-say-english/"/>
+    
+    
+      <category term="英语" scheme="http://blog.iyanan.me/tags/english/"/>
+    
+      <category term="笔记" scheme="http://blog.iyanan.me/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李雷说英语(2)</title>
+    <link href="http://blog.iyanan.me/2014/12/23/%E6%9D%8E%E9%9B%B7%E8%AF%B4%E8%8B%B1%E8%AF%AD-2/"/>
+    <id>http://blog.iyanan.me/2014/12/23/李雷说英语-2/</id>
+    <published>2014-12-22T16:02:20.000Z</published>
+    <updated>2018-01-29T02:46:48.211Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="主谓宾-两物一动作"><a href="#主谓宾-两物一动作" class="headerlink" title="主谓宾(两物一动作)"></a>主谓宾(两物一动作)</h2><ol><li>宾语是谓语后方的名词，一个名词是主语还是宾语，得看它在句子中的位置。</li><li>vt. 及物动词不能放在主谓结构中，可以放在主谓宾结构中</li><li>他利用了我们(<strong><em>He used us</em></strong>)，we主格(只能放在主语的位置)，us宾格(只能放在宾语的位置)。</li><li>我的女朋友把我甩了(<strong><em>My girlfriend dumped me</em></strong>)</li><li>可以直译就直译，不能直译，调整语序后再翻译</li><li>主语 + vt + 宾语，主语 + vi + 介词 + 宾语<ol><li>我讨厌他 <strong><em>I hate him(vt –&gt; n)</em></strong>主谓宾，及物动词作用于后面的宾语。</li><li>我经常听鬼故事 <strong><em>I often listen to ghost stories</em></strong></li><li>她死了<strong><em>She died(n &lt;– vi)</em></strong>主谓，后面的不及物动词作用于前面的主语。</li></ol></li><li>频率副词<ol><li>often</li><li>always</li><li>usually</li><li>主谓宾+普通副词</li><li>主+频率副词+谓宾</li><li>他老婆<strong><em>经常</em></strong>在公共场合大声地吼他(<strong><em>His wife often shouts at him loudly in public</em></strong>)</li></ol></li><li>怎样确定不及物动词后面的介词？<strong>需要积累</strong></li><li>如何用英语表达分数？<ol><li>1/7,seventh n. 第七；七分之一</li><li>3/7 Three sevenths</li><li>4/9 four ninths</li><li>1/2 half n.</li><li>1/4 quarter n. 3/4 Three quarters </li></ol></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;主谓宾-两物一动作&quot;&gt;&lt;a href=&quot;#主谓宾-两物一动作&quot; class=&quot;headerlink&quot; title=&quot;主谓宾(两物一动作)&quot;&gt;&lt;/a&gt;主谓宾(两物一动作)&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;宾语是谓语后方的名词，一个名词是主语还是宾语，得看它在句子中的位置。
+      
+    
+    </summary>
+    
+      <category term="李雷说英语" scheme="http://blog.iyanan.me/categories/lilei-say-english/"/>
+    
+    
+      <category term="英语" scheme="http://blog.iyanan.me/tags/english/"/>
+    
+      <category term="笔记" scheme="http://blog.iyanan.me/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李雷说英语(1)</title>
+    <link href="http://blog.iyanan.me/2014/12/22/%E6%9D%8E%E9%9B%B7%E8%AF%B4%E8%8B%B1%E8%AF%AD-1/"/>
+    <id>http://blog.iyanan.me/2014/12/22/李雷说英语-1/</id>
+    <published>2014-12-22T15:09:57.000Z</published>
+    <updated>2018-01-29T02:46:48.211Z</updated>
+    
+    <content type="html"><![CDATA[<p>大学毕业多年之后的今天，哦不，确切说是高中毕业后多年之后，虽然在工作中也要看各种的英文文档，查找英文的技术资料，但早已忘记了英语的语序啊、结构啊之类的基本概念，大部分的理解已经是靠经验，觉得“大概就是这么个意思”，“这些单词放在一起就该这么翻译”……当然，这也是因为英语在工作、生活中虽然必不可少，但却可以“不求甚解”的外部环境造成的。前些日子偶尔看到优酷视频的一个自媒体节目<a href="http://v.youku.com/v_show/id_XNjc0Mzc1MTk2.html" target="_blank" rel="noopener">《李雷说英语》</a>，作者的用心之处自不必说，其节目的趣味性和学习效果也是刚刚的，从今天起，决定每集都看一看，重新回归，从基础语法结构学习，记录学习笔记。</p><h2 id="主谓结构-一物一动作"><a href="#主谓结构-一物一动作" class="headerlink" title="主谓结构(一物一动作)"></a>主谓结构(一物一动作)</h2><ol><li>主语：主语都是名词，名词包含代词(I\She\It\He\They)</li><li>谓语：名词后面的动词(暂时如此解释)</li><li>主谓结构的中文句子都可以直接翻译成英文。<ol><li>他死了(He died)。</li><li>网络任务消失了(The network tasks disappeared)。</li></ol></li><li>将主谓结构的简单句子变成长句。<ol><li>adj. 修饰 n.</li><li>adv. 修饰 v.</li><li>时间地点写句末</li><li>简单句子：A man died. 长句：adj+主+谓+adv+时间+地点。例句：A young man died mysteriously in this hotel last night. A young girl fainted suddenly in the bathroom just now.</li></ol></li><li>如何判断一个词是副词？<ol><li>背单词时记住词性。</li><li>“突然”是什么词性？在“突然”后面加上“小孩”|“晕倒”，发现“突然小孩”句子不同，“突然晕倒”句子通顺，而小孩是名词，晕倒是动词，形容词修饰名词，副词修饰动词，这么判断的话很明显“突然”就是副词了。</li></ol></li><li>副词修饰谓语放在结构后方：主谓副，主谓宾副</li><li>动词分类：<ol><li>vt 及物动词 不用在主谓结构中 和它后面的名词是不可拆分的整体</li><li>vi 不及物动词</li></ol></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;大学毕业多年之后的今天，哦不，确切说是高中毕业后多年之后，虽然在工作中也要看各种的英文文档，查找英文的技术资料，但早已忘记了英语的语序啊、结构啊之类的基本概念，大部分的理解已经是靠经验，觉得“大概就是这么个意思”，“这些单词放在一起就该这么翻译”……当然，这也是因为英语在工
+      
+    
+    </summary>
+    
+      <category term="李雷说英语" scheme="http://blog.iyanan.me/categories/lilei-say-english/"/>
+    
+    
+      <category term="英语" scheme="http://blog.iyanan.me/tags/english/"/>
+    
+      <category term="笔记" scheme="http://blog.iyanan.me/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Assert断言</title>
+    <link href="http://blog.iyanan.me/2014/12/21/Assert%E6%96%AD%E8%A8%80/"/>
+    <id>http://blog.iyanan.me/2014/12/21/Assert断言/</id>
+    <published>2014-12-21T08:22:29.000Z</published>
+    <updated>2018-01-29T02:46:48.196Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近，遇到一个计算生态补偿金额的业务，具体的计算公式是一个比较麻烦的东西，里面各种数据符号，什么Σ、Φ、α、β之类的玩意，对于我来说，好久不见这些东西，符号该怎么读都差不多忘记了，很是苦恼。最后终于跟客户弄清楚了，公式的意义，就开始编码计算。</p><p>公式的数据来源是数据库中查出来的，但数据库中的数据并非就是完整的、干净的，就是说我再处理α*β这类玩意的时候很有可能从数据库中查出来的是一个非数字字符串，或者null数据。那么问题来了，这样子去计算公式程序必然会报各种异常，然后跟客户反应后客户提出要求：运行公式前，先检查公式需要数据的完整性，如果公式需要的数据不符合要求，就在页面上给客户提示，哪些数据有问题。</p><h2 id="条件判断方式"><a href="#条件判断方式" class="headerlink" title="条件判断方式"></a>条件判断方式</h2><p>将数据从数据库中查出，依次按照各个数据的校验条件进行校验，使用返回字符串的形式返回校验结果。</p><pre><code>public String validate(){String errorInfo=&quot;&quot;;//dataA from databaseif(dataA == null){//或者其他条件要求，例如dataA必须为数字，数字范围在[1,20]等    errorInfo = &quot;dataA 数据有误&quot;;    return;}//dataB from databaseif(dataB == null){//或者其他条件要求，例如dataA必须为数字，数字范围在[1,20]等    errorInfo = &quot;dataB 数据有误&quot;;    return;}...//校验完毕，开始执行公式计算}</code></pre><p>这种方式就会有大量的检查代码，重复的逻辑判断<em>a==null</em>,<em>a is number</em>等，使代码看起来冗长切不易理解，校验代码和执行代码实际上就可以是两个不同的模块。</p><h2 id="ibatis方式"><a href="#ibatis方式" class="headerlink" title="ibatis方式"></a>ibatis方式</h2><p>最近在看ibatis源代码时看到它在处理异常信息时使用了一种非常有趣的方式。首先，有一个保存错误信息的类ErrorContext:</p><pre><code>public class ErrorContext {  private String resource;  private String activity;  private String objectId;  private String moreInfo;  private Throwable cause; //setter //getter  public String toString() {    StringBuffer message = new StringBuffer();    // resource    if (resource != null) {      message.append(&quot;  \n--- The error occurred in &quot;);      message.append(resource);      message.append(&quot;.&quot;);    }        // activity    if (activity != null) {      message.append(&quot;  \n--- The error occurred while &quot;);      message.append(activity);      message.append(&quot;.&quot;);    }    // object    if (objectId != null) {      message.append(&quot;  \n--- Check the &quot;);      message.append(objectId);      message.append(&quot;.&quot;);    }    // more info    if (moreInfo != null) {      message.append(&quot;  \n--- &quot;);      message.append(moreInfo);    }    // cause    if (cause != null) {      message.append(&quot;  \n--- Cause: &quot;);      message.append(cause.toString());    }    return message.toString();  }  public void reset() {    resource = null;    activity = null;    objectId = null;    moreInfo = null;    cause = null;  }    }</code></pre><p>然后在程序中使用时，直接在执行每一步关键代码的前面set校验信息，如果程序的下一步出现异常，那就跳到catch块中，将具体的异常信息保存到ErrorContext对象中，最终在处理异常时，就可以将详细的异常信息展示出来：</p><pre><code>protected void executeQueryWithCallback(StatementScope statementScope, Connection conn, Object parameterObject, Object resultObject, RowHandler rowHandler, int skipResults, int maxResults)  throws SQLException {//开始设置异常信息ErrorContext errorContext = statementScope.getErrorContext();errorContext.setActivity(&quot;preparing the mapped statement for execution&quot;);errorContext.setObjectId(this.getId());errorContext.setResource(this.getResource());try {  parameterObject = validateParameter(parameterObject);  Sql sql = getSql();  //执行代码前设置异常信息  errorContext.setMoreInfo(&quot;Check the parameter map.&quot;);  ParameterMap parameterMap = sql.getParameterMap(statementScope, parameterObject);  errorContext.setMoreInfo(&quot;Check the result map.&quot;);  ResultMap resultMap = sql.getResultMap(statementScope, parameterObject);  statementScope.setResultMap(resultMap);  statementScope.setParameterMap(parameterMap);  errorContext.setMoreInfo(&quot;Check the parameter map.&quot;);  Object[] parameters = parameterMap.getParameterObjectValues(statementScope, parameterObject);  errorContext.setMoreInfo(&quot;Check the SQL statement.&quot;);  String sqlString = sql.getSql(statementScope, parameterObject);  errorContext.setActivity(&quot;executing mapped statement&quot;);  errorContext.setMoreInfo(&quot;Check the SQL statement or the result map.&quot;);  RowHandlerCallback callback = new RowHandlerCallback(resultMap, resultObject, rowHandler);  sqlExecuteQuery(statementScope, conn, sqlString, parameters, skipResults, maxResults, callback);  errorContext.setMoreInfo(&quot;Check the output parameters.&quot;);  if (parameterObject != null) {    postProcessParameterObject(statementScope, parameterObject, parameters);  }  errorContext.reset();  sql.cleanup(statementScope);  notifyListeners();} catch (SQLException e) {  //异常信息保存近errorContext对象中  errorContext.setCause(e);  throw new NestedSQLException(errorContext.toString(), e.getSQLState(), e.getErrorCode(), e);} catch (Exception e) {  errorContext.setCause(e);  throw new NestedSQLException(errorContext.toString(), e);}}</code></pre><p><em>这种方式的好处就是不必挨个的去使用if语句判断，只需要在合适的地方加上错误信息的保存，程序的正常执行逻辑不变，当正常执行逻辑出现异常时，自然就会中断，然后此时保存的异常信息就是最近的信息。<br>当然，这种方式处理较为复杂的条件判断是就会比较麻烦，比如:a的数字范围是[10,20]，如果a的数值为30，带入到公式中，公式也是可以计算的，不会出现异常。</em></p><h2 id="spring方式"><a href="#spring方式" class="headerlink" title="spring方式"></a>spring方式</h2><p>使用过Spring的同学想必就见过这样的代码:</p><pre><code>public void addCallback(ListenableFutureCallback&lt;? super T&gt; callback) {    Assert.notNull(callback, &quot;&apos;callback&apos; must not be null&quot;);    synchronized (mutex) {        switch (state) {            case NEW:                callbacks.add(callback);                break;            case SUCCESS:                callback.onSuccess((T)result);                break;            case FAILURE:                callback.onFailure((Throwable) result);                break;        }    }}</code></pre><p>Spring中的很多操作的一开始都有这么一个断言Assert.notNull()，那么这个notNull()方法是什么呢？</p><pre><code>public static void notNull(Object object, String message) {    if (object == null) {        throw new IllegalArgumentException(message);    }}public static void notNull(Object object) {    notNull(object, &quot;[Assertion failed] - this argument is required; it must not be null&quot;);}</code></pre><p>可以看出，如果断言失败，那么程序就会抛出异常，这是非常严格的校验方式了。看到这里，有人也行会问，这根我们的校验有什么关系，我们是要返回具体的校验信息的。到这里，我们其实可以看出，假如我们想要返回具体的校验信息，只需要综合ibatis和spring的异常处理方式，在Assert之前把错误信息set近Context中就行了:</p><pre><code>public String validate(){try{    //dataA from database    errorContext.setErrorInfo(&quot;数据A不能为空&quot;);    Assert.notNull(dataA);    errorContext.setErrorInfo(&quot;数据范围为[10,20]&quot;);    Assert.range(10,20);}catch(Exception e){    //返回异常信息    return errorContext.toString();}...//校验完毕，开始执行公式计算}</code></pre><p>这样，既避免的代码重复，逻辑混乱，也可以更好的返回详细信息。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近，遇到一个计算生态补偿金额的业务，具体的计算公式是一个比较麻烦的东西，里面各种数据符号，什么Σ、Φ、α、β之类的玩意，对于我来说，好久不见这些东西，符号该怎么读都差不多忘记了，很是苦恼。最后终于跟客户弄清楚了，公式的意义，就开始编码计算。&lt;/p&gt;
+&lt;p&gt;公式的数据来源是
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://blog.iyanan.me/categories/Java/"/>
+    
+      <category term="代码艺术" scheme="http://blog.iyanan.me/categories/Java/code-art/"/>
+    
+    
+      <category term="Assertion" scheme="http://blog.iyanan.me/tags/Assertion/"/>
+    
+      <category term="Exception" scheme="http://blog.iyanan.me/tags/Exception/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客之旅</title>
+    <link href="http://blog.iyanan.me/2014/12/16/%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/"/>
+    <id>http://blog.iyanan.me/2014/12/16/博客之旅/</id>
+    <published>2014-12-16T15:26:40.000Z</published>
+    <updated>2018-01-29T02:46:48.211Z</updated>
+    
+    <content type="html"><![CDATA[<p>从今天起，也算是开始学会使用Github作为个人博客的平台了。忙活了半天，也用Hexo把基本的博客框架搭建了起来，貌似还是很好用的，不过我才只学会了一点点基本的应用，接下来就是要好好学习下这玩意怎么搞才方便，有能力的话还是自己搞一套皮肤才好玩，毕竟玩这个的就是追求个性。当然了，我不同与那群大牛的是，我以前基本没写过博客，虽然以前叨叨着写这写那的，可总是懒得动手，这次既然费劲把这个弄好了，那以后说什么也得多总结、多记录写心得体会啥的，不能让这番功夫白费了！</p><p>姑且自勉之！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;从今天起，也算是开始学会使用Github作为个人博客的平台了。忙活了半天，也用Hexo把基本的博客框架搭建了起来，貌似还是很好用的，不过我才只学会了一点点基本的应用，接下来就是要好好学习下这玩意怎么搞才方便，有能力的话还是自己搞一套皮肤才好玩，毕竟玩这个的就是追求个性。当然
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://blog.iyanan.me/categories/essay/"/>
+    
+    
+  </entry>
+  
+</feed>
