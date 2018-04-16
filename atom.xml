@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.iyanan.me/"/>
-  <updated>2018-04-16T01:40:36.017Z</updated>
+  <updated>2018-04-16T02:22:55.768Z</updated>
   <id>http://blog.iyanan.me/</id>
   
   <author>
@@ -17,13 +17,21 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>node/cleanNode</title>
-    <link href="http://blog.iyanan.me/2018/04/16/node-cleanNode/"/>
-    <id>http://blog.iyanan.me/2018/04/16/node-cleanNode/</id>
-    <published>2018-04-16T01:40:36.000Z</published>
-    <updated>2018-04-16T01:40:36.017Z</updated>
+    <title>代码整洁之道-培训总结</title>
+    <link href="http://blog.iyanan.me/2018/04/16/cleanCodeTrain/"/>
+    <id>http://blog.iyanan.me/2018/04/16/cleanCodeTrain/</id>
+    <published>2018-04-16T01:47:53.000Z</published>
+    <updated>2018-04-16T02:22:55.768Z</updated>
+    
+    <content type="html"><![CDATA[<p>04.12~04.14日，公司组织了为期3天的代码整洁之道的培训，原以为我这么多年的编码经验，这种培训已然是可有可无，对我来说作用不大的，然而培训过后却不得不感叹自己有些井底之蛙了，编程的路上还有很多风景，切不可固步自封，不然会错误很多。</p><h3 id="编程工程化"><a href="#编程工程化" class="headerlink" title="编程工程化"></a>编程工程化</h3><h3 id="编程人员心理"><a href="#编程人员心理" class="headerlink" title="编程人员心理"></a>编程人员心理</h3><h3 id="函数优化技巧"><a href="#函数优化技巧" class="headerlink" title="函数优化技巧"></a>函数优化技巧</h3><p><img src="../../image/hourse.jpg" alt="image"></p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;04.12~04.14日，公司组织了为期3天的代码整洁之道的培训，原以为我这么多年的编码经验，这种培训已然是可有可无，对我来说作用不大的，然而培训过后却不得不感叹自己有些井底之蛙了，编程的路上还有很多风景，切不可固步自封，不然会错误很多。&lt;/p&gt;
+&lt;h3 id=&quot;编程工程化
+      
     
     </summary>
     
@@ -367,9 +375,9 @@
       <category term="代码艺术" scheme="http://blog.iyanan.me/categories/Java/code-art/"/>
     
     
-      <category term="Assertion" scheme="http://blog.iyanan.me/tags/Assertion/"/>
-    
       <category term="Exception" scheme="http://blog.iyanan.me/tags/Exception/"/>
+    
+      <category term="Assertion" scheme="http://blog.iyanan.me/tags/Assertion/"/>
     
   </entry>
   
