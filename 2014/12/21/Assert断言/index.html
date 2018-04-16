@@ -1,165 +1,18 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="绝地的博客"><title>Assert断言 | Juedi's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Assert断言</h1><a id="logo" href="/.">Juedi's blog</a><p class="description">吾当绝地而行，纵万里而不知倦也</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Assert断言</h1><div class="post-meta">Dec 21, 2014<span> | </span><span class="category"><a href="/categories/Java/">Java</a><a href="/categories/Java/code-art/">代码艺术</a></span></div><div class="post-content"><p>最近，遇到一个计算生态补偿金额的业务，具体的计算公式是一个比较麻烦的东西，里面各种数据符号，什么Σ、Φ、α、β之类的玩意，对于我来说，好久不见这些东西，符号该怎么读都差不多忘记了，很是苦恼。最后终于跟客户弄清楚了，公式的意义，就开始编码计算。</p>
 <p>公式的数据来源是数据库中查出来的，但数据库中的数据并非就是完整的、干净的，就是说我再处理α*β这类玩意的时候很有可能从数据库中查出来的是一个非数字字符串，或者null数据。那么问题来了，这样子去计算公式程序必然会报各种异常，然后跟客户反应后客户提出要求：运行公式前，先检查公式需要数据的完整性，如果公式需要的数据不符合要求，就在页面上给客户提示，哪些数据有问题。</p>
 <h2 id="条件判断方式"><a href="#条件判断方式" class="headerlink" title="条件判断方式"></a>条件判断方式</h2><p>将数据从数据库中查出，依次按照各个数据的校验条件进行校验，使用返回字符串的形式返回校验结果。</p>
-<pre><code>public String validate(){
-String errorInfo=&quot;&quot;;
-//dataA from database
-if(dataA == null){//或者其他条件要求，例如dataA必须为数字，数字范围在[1,20]等
-    errorInfo = &quot;dataA 数据有误&quot;;
-    return;
-}
-//dataB from database
-if(dataB == null){//或者其他条件要求，例如dataA必须为数字，数字范围在[1,20]等
-    errorInfo = &quot;dataB 数据有误&quot;;
-    return;
-}
-...
-//校验完毕，开始执行公式计算
-}
-</code></pre><p>这种方式就会有大量的检查代码，重复的逻辑判断<em>a==null</em>,<em>a is number</em>等，使代码看起来冗长切不易理解，校验代码和执行代码实际上就可以是两个不同的模块。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public String validate()&#123;</span><br><span class="line">String errorInfo=&quot;&quot;;</span><br><span class="line">//dataA from database</span><br><span class="line">if(dataA == null)&#123;//或者其他条件要求，例如dataA必须为数字，数字范围在[1,20]等</span><br><span class="line">	errorInfo = &quot;dataA 数据有误&quot;;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line">//dataB from database</span><br><span class="line">if(dataB == null)&#123;//或者其他条件要求，例如dataA必须为数字，数字范围在[1,20]等</span><br><span class="line">	errorInfo = &quot;dataB 数据有误&quot;;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">//校验完毕，开始执行公式计算</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种方式就会有大量的检查代码，重复的逻辑判断<em>a==null</em>,<em>a is number</em>等，使代码看起来冗长切不易理解，校验代码和执行代码实际上就可以是两个不同的模块。</p>
 <h2 id="ibatis方式"><a href="#ibatis方式" class="headerlink" title="ibatis方式"></a>ibatis方式</h2><p>最近在看ibatis源代码时看到它在处理异常信息时使用了一种非常有趣的方式。首先，有一个保存错误信息的类ErrorContext:</p>
-<pre><code>public class ErrorContext {
-
-  private String resource;
-  private String activity;
-  private String objectId;
-  private String moreInfo;
-  private Throwable cause;
- //setter
- //getter
-  public String toString() {
-    StringBuffer message = new StringBuffer();
-    // resource
-    if (resource != null) {
-      message.append(&quot;  \n--- The error occurred in &quot;);
-      message.append(resource);
-      message.append(&quot;.&quot;);
-    }    
-    // activity
-    if (activity != null) {
-      message.append(&quot;  \n--- The error occurred while &quot;);
-      message.append(activity);
-      message.append(&quot;.&quot;);
-    }
-    // object
-    if (objectId != null) {
-      message.append(&quot;  \n--- Check the &quot;);
-      message.append(objectId);
-      message.append(&quot;.&quot;);
-    }
-    // more info
-    if (moreInfo != null) {
-      message.append(&quot;  \n--- &quot;);
-      message.append(moreInfo);
-    }
-    // cause
-    if (cause != null) {
-      message.append(&quot;  \n--- Cause: &quot;);
-      message.append(cause.toString());
-    }
-    return message.toString();
-  }
-  public void reset() {
-    resource = null;
-    activity = null;
-    objectId = null;
-    moreInfo = null;
-    cause = null;
-  }    
-}
-</code></pre><p>然后在程序中使用时，直接在执行每一步关键代码的前面set校验信息，如果程序的下一步出现异常，那就跳到catch块中，将具体的异常信息保存到ErrorContext对象中，最终在处理异常时，就可以将详细的异常信息展示出来：</p>
-<pre><code>protected void executeQueryWithCallback(StatementScope statementScope, Connection conn, Object parameterObject, Object resultObject, RowHandler rowHandler, int skipResults, int maxResults)
-  throws SQLException {
-//开始设置异常信息
-ErrorContext errorContext = statementScope.getErrorContext();
-errorContext.setActivity(&quot;preparing the mapped statement for execution&quot;);
-errorContext.setObjectId(this.getId());
-errorContext.setResource(this.getResource());
-
-try {
-  parameterObject = validateParameter(parameterObject);
-
-  Sql sql = getSql();
-  //执行代码前设置异常信息
-  errorContext.setMoreInfo(&quot;Check the parameter map.&quot;);
-  ParameterMap parameterMap = sql.getParameterMap(statementScope, parameterObject);
-
-  errorContext.setMoreInfo(&quot;Check the result map.&quot;);
-  ResultMap resultMap = sql.getResultMap(statementScope, parameterObject);
-
-  statementScope.setResultMap(resultMap);
-  statementScope.setParameterMap(parameterMap);
-
-  errorContext.setMoreInfo(&quot;Check the parameter map.&quot;);
-  Object[] parameters = parameterMap.getParameterObjectValues(statementScope, parameterObject);
-
-  errorContext.setMoreInfo(&quot;Check the SQL statement.&quot;);
-  String sqlString = sql.getSql(statementScope, parameterObject);
-
-  errorContext.setActivity(&quot;executing mapped statement&quot;);
-  errorContext.setMoreInfo(&quot;Check the SQL statement or the result map.&quot;);
-  RowHandlerCallback callback = new RowHandlerCallback(resultMap, resultObject, rowHandler);
-  sqlExecuteQuery(statementScope, conn, sqlString, parameters, skipResults, maxResults, callback);
-
-  errorContext.setMoreInfo(&quot;Check the output parameters.&quot;);
-  if (parameterObject != null) {
-    postProcessParameterObject(statementScope, parameterObject, parameters);
-  }
-
-  errorContext.reset();
-  sql.cleanup(statementScope);
-  notifyListeners();
-} catch (SQLException e) {
-  //异常信息保存近errorContext对象中
-  errorContext.setCause(e);
-  throw new NestedSQLException(errorContext.toString(), e.getSQLState(), e.getErrorCode(), e);
-} catch (Exception e) {
-  errorContext.setCause(e);
-  throw new NestedSQLException(errorContext.toString(), e);
-}
-}
-</code></pre><p><em>这种方式的好处就是不必挨个的去使用if语句判断，只需要在合适的地方加上错误信息的保存，程序的正常执行逻辑不变，当正常执行逻辑出现异常时，自然就会中断，然后此时保存的异常信息就是最近的信息。<br>当然，这种方式处理较为复杂的条件判断是就会比较麻烦，比如:a的数字范围是[10,20]，如果a的数值为30，带入到公式中，公式也是可以计算的，不会出现异常。</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class ErrorContext &#123;</span><br><span class="line"></span><br><span class="line">	 private String resource;</span><br><span class="line">	 private String activity;</span><br><span class="line">	 private String objectId;</span><br><span class="line">	 private String moreInfo;</span><br><span class="line">	 private Throwable cause;</span><br><span class="line"> //setter</span><br><span class="line"> //getter</span><br><span class="line">	 public String toString() &#123;</span><br><span class="line">  	 StringBuffer message = new StringBuffer();</span><br><span class="line">    // resource</span><br><span class="line">    if (resource != null) &#123;</span><br><span class="line">      message.append(&quot;  \n--- The error occurred in &quot;);</span><br><span class="line">      message.append(resource);</span><br><span class="line">      message.append(&quot;.&quot;);</span><br><span class="line">    &#125;	</span><br><span class="line">    // activity</span><br><span class="line">    if (activity != null) &#123;</span><br><span class="line">      message.append(&quot;  \n--- The error occurred while &quot;);</span><br><span class="line">      message.append(activity);</span><br><span class="line">      message.append(&quot;.&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    // object</span><br><span class="line">    if (objectId != null) &#123;</span><br><span class="line">      message.append(&quot;  \n--- Check the &quot;);</span><br><span class="line">      message.append(objectId);</span><br><span class="line">      message.append(&quot;.&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    // more info</span><br><span class="line">    if (moreInfo != null) &#123;</span><br><span class="line">      message.append(&quot;  \n--- &quot;);</span><br><span class="line">      message.append(moreInfo);</span><br><span class="line">    &#125;</span><br><span class="line">    // cause</span><br><span class="line">    if (cause != null) &#123;</span><br><span class="line">      message.append(&quot;  \n--- Cause: &quot;);</span><br><span class="line">      message.append(cause.toString());</span><br><span class="line">    &#125;</span><br><span class="line">    return message.toString();</span><br><span class="line">  &#125;</span><br><span class="line">  public void reset() &#123;</span><br><span class="line">    resource = null;</span><br><span class="line">    activity = null;</span><br><span class="line">    objectId = null;</span><br><span class="line">    moreInfo = null;</span><br><span class="line">    cause = null;</span><br><span class="line">  &#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在程序中使用时，直接在执行每一步关键代码的前面set校验信息，如果程序的下一步出现异常，那就跳到catch块中，将具体的异常信息保存到ErrorContext对象中，最终在处理异常时，就可以将详细的异常信息展示出来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">protected void executeQueryWithCallback(StatementScope statementScope, Connection conn, Object parameterObject, Object resultObject, RowHandler rowHandler, int skipResults, int maxResults)</span><br><span class="line">     throws SQLException &#123;</span><br><span class="line">//开始设置异常信息</span><br><span class="line">   ErrorContext errorContext = statementScope.getErrorContext();</span><br><span class="line">   errorContext.setActivity(&quot;preparing the mapped statement for execution&quot;);</span><br><span class="line">   errorContext.setObjectId(this.getId());</span><br><span class="line">   errorContext.setResource(this.getResource());</span><br><span class="line"></span><br><span class="line">   try &#123;</span><br><span class="line">     parameterObject = validateParameter(parameterObject);</span><br><span class="line"></span><br><span class="line">     Sql sql = getSql();</span><br><span class="line">  //执行代码前设置异常信息</span><br><span class="line">     errorContext.setMoreInfo(&quot;Check the parameter map.&quot;);</span><br><span class="line">     ParameterMap parameterMap = sql.getParameterMap(statementScope, parameterObject);</span><br><span class="line"></span><br><span class="line">     errorContext.setMoreInfo(&quot;Check the result map.&quot;);</span><br><span class="line">     ResultMap resultMap = sql.getResultMap(statementScope, parameterObject);</span><br><span class="line"></span><br><span class="line">     statementScope.setResultMap(resultMap);</span><br><span class="line">     statementScope.setParameterMap(parameterMap);</span><br><span class="line"></span><br><span class="line">     errorContext.setMoreInfo(&quot;Check the parameter map.&quot;);</span><br><span class="line">     Object[] parameters = parameterMap.getParameterObjectValues(statementScope, parameterObject);</span><br><span class="line"></span><br><span class="line">     errorContext.setMoreInfo(&quot;Check the SQL statement.&quot;);</span><br><span class="line">     String sqlString = sql.getSql(statementScope, parameterObject);</span><br><span class="line"></span><br><span class="line">     errorContext.setActivity(&quot;executing mapped statement&quot;);</span><br><span class="line">     errorContext.setMoreInfo(&quot;Check the SQL statement or the result map.&quot;);</span><br><span class="line">     RowHandlerCallback callback = new RowHandlerCallback(resultMap, resultObject, rowHandler);</span><br><span class="line">     sqlExecuteQuery(statementScope, conn, sqlString, parameters, skipResults, maxResults, callback);</span><br><span class="line"></span><br><span class="line">     errorContext.setMoreInfo(&quot;Check the output parameters.&quot;);</span><br><span class="line">     if (parameterObject != null) &#123;</span><br><span class="line">       postProcessParameterObject(statementScope, parameterObject, parameters);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     errorContext.reset();</span><br><span class="line">     sql.cleanup(statementScope);</span><br><span class="line">     notifyListeners();</span><br><span class="line">   &#125; catch (SQLException e) &#123;</span><br><span class="line">  //异常信息保存近errorContext对象中</span><br><span class="line">     errorContext.setCause(e);</span><br><span class="line">     throw new NestedSQLException(errorContext.toString(), e.getSQLState(), e.getErrorCode(), e);</span><br><span class="line">   &#125; catch (Exception e) &#123;</span><br><span class="line">     errorContext.setCause(e);</span><br><span class="line">     throw new NestedSQLException(errorContext.toString(), e);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>这种方式的好处就是不必挨个的去使用if语句判断，只需要在合适的地方加上错误信息的保存，程序的正常执行逻辑不变，当正常执行逻辑出现异常时，自然就会中断，然后此时保存的异常信息就是最近的信息。<br>当然，这种方式处理较为复杂的条件判断是就会比较麻烦，比如:a的数字范围是[10,20]，如果a的数值为30，带入到公式中，公式也是可以计算的，不会出现异常。</em></p>
 <h2 id="spring方式"><a href="#spring方式" class="headerlink" title="spring方式"></a>spring方式</h2><p>使用过Spring的同学想必就见过这样的代码:</p>
-<pre><code>public void addCallback(ListenableFutureCallback&lt;? super T&gt; callback) {
-    Assert.notNull(callback, &quot;&apos;callback&apos; must not be null&quot;);
-    synchronized (mutex) {
-        switch (state) {
-            case NEW:
-                callbacks.add(callback);
-                break;
-            case SUCCESS:
-                callback.onSuccess((T)result);
-                break;
-            case FAILURE:
-                callback.onFailure((Throwable) result);
-                break;
-        }
-    }
-}
-</code></pre><p>Spring中的很多操作的一开始都有这么一个断言Assert.notNull()，那么这个notNull()方法是什么呢？</p>
-<pre><code>public static void notNull(Object object, String message) {
-    if (object == null) {
-        throw new IllegalArgumentException(message);
-    }
-}
-
-public static void notNull(Object object) {
-    notNull(object, &quot;[Assertion failed] - this argument is required; it must not be null&quot;);
-}
-</code></pre><p>可以看出，如果断言失败，那么程序就会抛出异常，这是非常严格的校验方式了。看到这里，有人也行会问，这根我们的校验有什么关系，我们是要返回具体的校验信息的。到这里，我们其实可以看出，假如我们想要返回具体的校验信息，只需要综合ibatis和spring的异常处理方式，在Assert之前把错误信息set近Context中就行了:</p>
-<pre><code>public String validate(){
-try{
-    //dataA from database
-    errorContext.setErrorInfo(&quot;数据A不能为空&quot;);
-    Assert.notNull(dataA);
-    errorContext.setErrorInfo(&quot;数据范围为[10,20]&quot;);
-    Assert.range(10,20);
-}catch(Exception e){
-    //返回异常信息
-    return errorContext.toString();
-}
-...
-//校验完毕，开始执行公式计算
-}
-</code></pre><p>这样，既避免的代码重复，逻辑混乱，也可以更好的返回详细信息。</p>
-</div><iframe src="/donate/?AliPayQR=/img/alipay.jpeg&amp;WeChatQR=null&amp;GitHub=null&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="tags"><a href="/tags/Exception/">Exception</a><a href="/tags/Assertion/">Assertion</a></div><div class="post-nav"><a class="pre" href="/2014/12/22/李雷说英语-1/">李雷说英语(1)</a><a class="next" href="/2014/12/16/博客之旅/">博客之旅</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"/><input type="hidden" name="si" value="http://blog.iyanan.me"/><input name="tn" type="hidden" value="bds"/><input name="cl" type="hidden" value="3"/><input name="ct" type="hidden" value="2097152"/><input name="s" type="hidden" value="on"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/code-art/">代码艺术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/lilei-say-english/">李雷说英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essay/">随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/interview/">面试</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Exception/" style="font-size: 15px;">Exception</a> <a href="/tags/Assertion/" style="font-size: 15px;">Assertion</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/english/" style="font-size: 15px;">英语</a> <a href="/tags/note/" style="font-size: 15px;">笔记</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/16/cleanCodeTrain/">代码整洁之道-培训总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/15/不要乱来/">不要乱来</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/11/queryForLong/">queryForLong</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/11/idea_mac_keys/">IntelliJ IDEA For Mac 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/08/linux-sz-rz/">Linux文件上传下载工具-lrzsz</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/05/interview-1/">面试总结(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/27/Exception2String/">Exception to String</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/28/李雷说英语-6/">李雷说英语(6)</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/28/李雷说英语-5/">李雷说英语(5)</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/26/李雷说英语-4/">李雷说英语(4)</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.baidu.com/" title="待定" target="_blank">待定</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Juedi's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public void addCallback(ListenableFutureCallback&lt;? super T&gt; callback) &#123;</span><br><span class="line">	Assert.notNull(callback, &quot;&apos;callback&apos; must not be null&quot;);</span><br><span class="line">	synchronized (mutex) &#123;</span><br><span class="line">		switch (state) &#123;</span><br><span class="line">			case NEW:</span><br><span class="line">				callbacks.add(callback);</span><br><span class="line">				break;</span><br><span class="line">			case SUCCESS:</span><br><span class="line">				callback.onSuccess((T)result);</span><br><span class="line">				break;</span><br><span class="line">			case FAILURE:</span><br><span class="line">				callback.onFailure((Throwable) result);</span><br><span class="line">				break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Spring中的很多操作的一开始都有这么一个断言Assert.notNull()，那么这个notNull()方法是什么呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void notNull(Object object, String message) &#123;</span><br><span class="line">	if (object == null) &#123;</span><br><span class="line">		throw new IllegalArgumentException(message);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void notNull(Object object) &#123;</span><br><span class="line">	notNull(object, &quot;[Assertion failed] - this argument is required; it must not be null&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出，如果断言失败，那么程序就会抛出异常，这是非常严格的校验方式了。看到这里，有人也行会问，这根我们的校验有什么关系，我们是要返回具体的校验信息的。到这里，我们其实可以看出，假如我们想要返回具体的校验信息，只需要综合ibatis和spring的异常处理方式，在Assert之前把错误信息set近Context中就行了:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public String validate()&#123;</span><br><span class="line">try&#123;</span><br><span class="line">	//dataA from database</span><br><span class="line">	errorContext.setErrorInfo(&quot;数据A不能为空&quot;);</span><br><span class="line">	Assert.notNull(dataA);</span><br><span class="line">	errorContext.setErrorInfo(&quot;数据范围为[10,20]&quot;);</span><br><span class="line">	Assert.range(10,20);</span><br><span class="line">&#125;catch(Exception e)&#123;</span><br><span class="line">	//返回异常信息</span><br><span class="line">	return errorContext.toString();</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">//校验完毕，开始执行公式计算</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，既避免的代码重复，逻辑混乱，也可以更好的返回详细信息。</p>
+</div><iframe src="/donate/?AliPayQR=/img/alipay.jpeg&amp;WeChatQR=null&amp;GitHub=null&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="tags"><a href="/tags/Assertion/">Assertion</a><a href="/tags/Exception/">Exception</a></div><div class="post-nav"><a class="pre" href="/2014/12/22/李雷说英语-1/">李雷说英语(1)</a><a class="next" href="/2014/12/16/博客之旅/">博客之旅</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank"><input type="search" name="word" maxlength="20" placeholder="Search"/><input type="hidden" name="si" value="http://blog.iyanan.me"/><input name="tn" type="hidden" value="bds"/><input name="cl" type="hidden" value="3"/><input name="ct" type="hidden" value="2097152"/><input name="s" type="hidden" value="on"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/code-art/">代码艺术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/code-art/">代码艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/lilei-say-english/">李雷说英语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essay/">随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/interview/">面试</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Assertion/" style="font-size: 15px;">Assertion</a> <a href="/tags/Exception/" style="font-size: 15px;">Exception</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/english/" style="font-size: 15px;">英语</a> <a href="/tags/note/" style="font-size: 15px;">笔记</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/16/cleanCodeTrain/">代码整洁之道-培训总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/15/不要乱来/">不要乱来</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/11/idea_mac_keys/">IntelliJ IDEA For Mac 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/11/queryForLong/">queryForLong</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/08/linux-sz-rz/">Linux文件上传下载工具-lrzsz</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/05/interview-1/">面试总结(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/27/Exception2String/">Exception to String</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/28/李雷说英语-6/">李雷说英语(6)</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/28/李雷说英语-5/">李雷说英语(5)</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/26/李雷说英语-4/">李雷说英语(4)</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.baidu.com/" title="待定" target="_blank">待定</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Juedi's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
