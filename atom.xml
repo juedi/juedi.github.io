@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.iyanan.me/"/>
-  <updated>2018-04-16T02:22:55.768Z</updated>
+  <updated>2018-04-16T07:12:54.882Z</updated>
   <id>http://blog.iyanan.me/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://blog.iyanan.me/2018/04/16/cleanCodeTrain/"/>
     <id>http://blog.iyanan.me/2018/04/16/cleanCodeTrain/</id>
     <published>2018-04-16T01:47:53.000Z</published>
-    <updated>2018-04-16T02:22:55.768Z</updated>
+    <updated>2018-04-16T07:12:54.882Z</updated>
     
-    <content type="html"><![CDATA[<p>04.12~04.14日，公司组织了为期3天的代码整洁之道的培训，原以为我这么多年的编码经验，这种培训已然是可有可无，对我来说作用不大的，然而培训过后却不得不感叹自己有些井底之蛙了，编程的路上还有很多风景，切不可固步自封，不然会错误很多。</p><h3 id="编程工程化"><a href="#编程工程化" class="headerlink" title="编程工程化"></a>编程工程化</h3><h3 id="编程人员心理"><a href="#编程人员心理" class="headerlink" title="编程人员心理"></a>编程人员心理</h3><h3 id="函数优化技巧"><a href="#函数优化技巧" class="headerlink" title="函数优化技巧"></a>函数优化技巧</h3><p><img src="../../image/hourse.jpg" alt="image"></p>]]></content>
+    <content type="html"><![CDATA[<p>04.12~04.14日，公司组织了为期3天的代码整洁之道的培训，原以为我这么多年的编码经验，这种培训已然是可有可无，对我来说作用不大的，然而培训过后却不得不感叹自己有些井底之蛙了，编程的路上还有很多风景，切不可固步自封，不然会错误很多。</p><h3 id="什么是软件设计？——代码也是设计"><a href="#什么是软件设计？——代码也是设计" class="headerlink" title="什么是软件设计？——代码也是设计"></a>什么是软件设计？——代码也是设计</h3><p>软件系统的源代码是它的主要设计文档，用来描述源代码的图示只是设计的附属物而不是设计本身，你不应该认为设计就是一组和代码分离的UML图。</p><p>我相信很多人都觉得架构师、设计人员就是程序员的升级版本，很厉害，很专业，软件的成败都在于设计的是否科学、合理。我一度也这么认为，“设计只要合理，编码再差也能实现功能”，然而现在看来，只是实现功能的代码的价值是及其低的，就像是你费尽力气，做了一个一次性的纸杯子，然而这个纸杯子只能用来喝有限次数的水，不具备可持续性，这样的代码，对于要开发持续化产品的企业来说，是致命的bug。首先，就要避免这样的认识，否则在产品迭代发展的过程中，随着代码复杂度提升、可维护性越来越低，最终到达不可维护、没人敢改、没人动的地步。相应的，我们应该确立这样的认识——编码如同架构、设计一样，是一门高深的学问，是很有技术含量的一种技能，就好比现在的中国制造业，美国人用他们的科技设计了iphone，然而只有中国的制造业能够批量大规模的将这些精密的设计制造出来，这种能够批量制造的能力，本身也是一种高科技。所以说，想要写出优美的代码，并不比架构一个系统来得容易。</p><p>优美的代码如同文章，看代码就能看出其意图，看出其流程。写文章不是一蹴而就的，是要精雕细琢，一点点从草稿打磨的，写代码也是这样，一开始就写出优美代码是不可能的，也是需要一点点优化、重构才能让代码变的更好，一旦代码变得优美，那代码就是设计文档，是最正确的设计文档，而非架构师的“画马”。</p><p><img src="https://raw.githubusercontent.com/juedi/juedi.github.io/source/blog/image/horse.jpg" alt="image"></p><p>总之，我们应当重视代码质量，代码质量是“冰山”的根本，不然一个软件就是无根的浮萍，稍有风吹草动，就轰然崩塌。</p><h3 id="编程人员心理"><a href="#编程人员心理" class="headerlink" title="编程人员心理"></a>编程人员心理</h3><p>编程是一种态度！<br>编程是一种技艺！<br>编程是一种习惯！</p><p>不要给自己找借口，我们总是说时间紧、任务重，根本没有时间重构、优化代码，然后事实真的如此吗？的确，在很多情况下，我们的工作都在赶工期、赶进度，然而有时候的工作是磨刀不误砍柴工，如果一开始就保持了代码的整洁，那可能在面对后续变更的时候就可以很快的完成实现，就不用一直“赶”了，当然，也或许不一定，那为什么不试试呢，毕竟，如果成功了，就是一个非常好的正向的循环，会越来越好。</p><p>从项目管理者的角度来说，在做项目计划时，应当考虑代码的优化、重构、单元测试的时间，如果在做计划时就没有考虑，那当然就不会做，也没有时间去做。</p><h3 id="函数优化技巧"><a href="#函数优化技巧" class="headerlink" title="函数优化技巧"></a>函数优化技巧</h3><p>此部分将结合实际应用在后续编码中实践，同时单独总结分享，此处列出几个重要的收获点：</p><ul><li>共有方法做成目录，表达流程；私有方法编写实现。</li><li>方法内部要有统一的抽象层次</li><li>每个变量、每个方法、每行代码、每个循环都尽量做到单一职责</li><li>查询、命令分离原则</li><li>别返回null，别传递null</li><li>代码的性能在没有测试前不要凭主观感觉想象</li><li>移除控制标记，少用break</li><li>最小意外原则，别搞“惊喜”按套路来</li><li>引入解释变量</li><li>首先，做到不伤害</li></ul>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;04.12~04.14日，公司组织了为期3天的代码整洁之道的培训，原以为我这么多年的编码经验，这种培训已然是可有可无，对我来说作用不大的，然而培训过后却不得不感叹自己有些井底之蛙了，编程的路上还有很多风景，切不可固步自封，不然会错误很多。&lt;/p&gt;
-&lt;h3 id=&quot;编程工程化
+&lt;h3 id=&quot;什么是软件
       
     
     </summary>
@@ -62,6 +62,30 @@
   </entry>
   
   <entry>
+    <title>queryForLong</title>
+    <link href="http://blog.iyanan.me/2017/12/11/queryForLong/"/>
+    <id>http://blog.iyanan.me/2017/12/11/queryForLong/</id>
+    <published>2017-12-11T05:35:04.000Z</published>
+    <updated>2018-01-29T02:46:48.211Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用spring jdbcTemplate查询单值结果时，例如queryForLong、queryForInt这种，如果数据库返回的结果为空，就会报错，而我们希望的结果，一般都是有值的话就返回值，没值的花就返回null<br>这样，就要使用这种方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.query(sql, values, new ResultSetExtractor&lt;Long&gt;()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public Long extractData(ResultSet rs) throws SQLException, DataAccessException&#123;</span><br><span class="line">        if(rs.next())&#123;</span><br><span class="line">            return rs.getLong(column);</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>不能采用这样的方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.queryForObject(sql, values, Long.class);</span><br></pre></td></tr></table></figure><p>也不能采用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.queryForObject(sql, values, someRowMapper)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;使用spring jdbcTemplate查询单值结果时，例如queryForLong、queryForInt这种，如果数据库返回的结果为空，就会报错，而我们希望的结果，一般都是有值的话就返回值，没值的花就返回null&lt;br&gt;这样，就要使用这种方式&lt;/p&gt;
+&lt;figure 
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://blog.iyanan.me/categories/java/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>IntelliJ IDEA For Mac 快捷键</title>
     <link href="http://blog.iyanan.me/2017/12/11/idea_mac_keys/"/>
     <id>http://blog.iyanan.me/2017/12/11/idea_mac_keys/</id>
@@ -82,30 +106,6 @@
     </summary>
     
       <category term="工具" scheme="http://blog.iyanan.me/categories/tools/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>queryForLong</title>
-    <link href="http://blog.iyanan.me/2017/12/11/queryForLong/"/>
-    <id>http://blog.iyanan.me/2017/12/11/queryForLong/</id>
-    <published>2017-12-11T05:35:04.000Z</published>
-    <updated>2018-01-29T02:46:48.211Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用spring jdbcTemplate查询单值结果时，例如queryForLong、queryForInt这种，如果数据库返回的结果为空，就会报错，而我们希望的结果，一般都是有值的话就返回值，没值的花就返回null<br>这样，就要使用这种方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.query(sql, values, new ResultSetExtractor&lt;Long&gt;()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public Long extractData(ResultSet rs) throws SQLException, DataAccessException&#123;</span><br><span class="line">        if(rs.next())&#123;</span><br><span class="line">            return rs.getLong(column);</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>不能采用这样的方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.queryForObject(sql, values, Long.class);</span><br></pre></td></tr></table></figure><p>也不能采用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.queryForObject(sql, values, someRowMapper)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;使用spring jdbcTemplate查询单值结果时，例如queryForLong、queryForInt这种，如果数据库返回的结果为空，就会报错，而我们希望的结果，一般都是有值的话就返回值，没值的花就返回null&lt;br&gt;这样，就要使用这种方式&lt;/p&gt;
-&lt;figure 
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://blog.iyanan.me/categories/java/"/>
     
     
   </entry>
