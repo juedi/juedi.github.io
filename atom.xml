@@ -375,9 +375,9 @@
       <category term="java" scheme="http://blog.iyanan.me/categories/java/"/>
     
     
-      <category term="Exception" scheme="http://blog.iyanan.me/tags/Exception/"/>
-    
       <category term="Assertion" scheme="http://blog.iyanan.me/tags/Assertion/"/>
+    
+      <category term="Exception" scheme="http://blog.iyanan.me/tags/Exception/"/>
     
   </entry>
   
