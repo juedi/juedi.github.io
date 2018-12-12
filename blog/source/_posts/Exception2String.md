@@ -1,6 +1,6 @@
 title: Exception to String
 date: 2015-01-27 20:42:20
-categories: [Java]
+categories: java
 tags: Exception
 
 ---

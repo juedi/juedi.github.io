@@ -1,6 +1,7 @@
+---
 title: Assert断言
 date: 2014-12-21 16:22:29
-categories: [Java, 代码艺术]
+categories: java
 tags: 
 - Assertion
 - Exception
@@ -12,6 +13,7 @@ tags:
 ## 条件判断方式
 将数据从数据库中查出，依次按照各个数据的校验条件进行校验，使用返回字符串的形式返回校验结果。
 
+```
 	public String validate(){
 	String errorInfo="";
 	//dataA from database
@@ -27,9 +29,13 @@ tags:
 	...
 	//校验完毕，开始执行公式计算
 	}
+```
+
 这种方式就会有大量的检查代码，重复的逻辑判断*a==null*,*a is number*等，使代码看起来冗长切不易理解，校验代码和执行代码实际上就可以是两个不同的模块。
 ## ibatis方式
 最近在看ibatis源代码时看到它在处理异常信息时使用了一种非常有趣的方式。首先，有一个保存错误信息的类ErrorContext:
+
+```
 
 	public class ErrorContext {
 
@@ -80,9 +86,11 @@ tags:
 	    cause = null;
 	  }	
 	}
+```
 
 然后在程序中使用时，直接在执行每一步关键代码的前面set校验信息，如果程序的下一步出现异常，那就跳到catch块中，将具体的异常信息保存到ErrorContext对象中，最终在处理异常时，就可以将详细的异常信息展示出来：
 
+```
 	protected void executeQueryWithCallback(StatementScope statementScope, Connection conn, Object parameterObject, Object resultObject, RowHandler rowHandler, int skipResults, int maxResults)
       throws SQLException {
 	//开始设置异常信息
@@ -134,12 +142,15 @@ tags:
     }
 	}
 
+```
+
 *这种方式的好处就是不必挨个的去使用if语句判断，只需要在合适的地方加上错误信息的保存，程序的正常执行逻辑不变，当正常执行逻辑出现异常时，自然就会中断，然后此时保存的异常信息就是最近的信息。
 当然，这种方式处理较为复杂的条件判断是就会比较麻烦，比如:a的数字范围是[10,20]，如果a的数值为30，带入到公式中，公式也是可以计算的，不会出现异常。*
 ## spring方式
 
 使用过Spring的同学想必就见过这样的代码:
 
+```
 	public void addCallback(ListenableFutureCallback<? super T> callback) {
 		Assert.notNull(callback, "'callback' must not be null");
 		synchronized (mutex) {
@@ -156,8 +167,12 @@ tags:
 			}
 		}
 	}
+
+```
+
 Spring中的很多操作的一开始都有这么一个断言Assert.notNull()，那么这个notNull()方法是什么呢？
 
+```
 	public static void notNull(Object object, String message) {
 		if (object == null) {
 			throw new IllegalArgumentException(message);
@@ -167,8 +182,11 @@ Spring中的很多操作的一开始都有这么一个断言Assert.notNull()，�
 	public static void notNull(Object object) {
 		notNull(object, "[Assertion failed] - this argument is required; it must not be null");
 	}
+```
+
 可以看出，如果断言失败，那么程序就会抛出异常，这是非常严格的校验方式了。看到这里，有人也行会问，这根我们的校验有什么关系，我们是要返回具体的校验信息的。到这里，我们其实可以看出，假如我们想要返回具体的校验信息，只需要综合ibatis和spring的异常处理方式，在Assert之前把错误信息set近Context中就行了:
 
+```
 	public String validate(){
 	try{
 		//dataA from database
@@ -183,5 +201,6 @@ Spring中的很多操作的一开始都有这么一个断言Assert.notNull()，�
 	...
 	//校验完毕，开始执行公式计算
 	}
+```
 
 这样，既避免的代码重复，逻辑混乱，也可以更好的返回详细信息。
